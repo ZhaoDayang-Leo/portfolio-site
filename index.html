@@ -600,11 +600,6 @@
     .rate small.split-scroll-text{overflow:visible;white-space:nowrap}
     .rate small.split-scroll-text .split-char{opacity:1;transform:none;animation:none}
     .life.is-scrub-complete .life-card:hover{transition:.28s}
-    .works{z-index:220;isolation:isolate;transform:translateZ(0)}
-    .life{z-index:20;isolation:isolate}
-    .life-stage{z-index:0;contain:layout paint style;transform:translateZ(0)}
-    .life:not(.is-life-active) .life-scrub-item,.life:not(.is-life-active) #vinyl-player{visibility:hidden!important}
-    .life-stage .sleeve-player.life-scrub-item{backface-visibility:hidden;-webkit-backface-visibility:hidden}
     @media(min-width:901px){.super{display:flex;justify-content:center;height:auto;min-height:676px;padding:88px 0}.super-card{width:min(1000px,calc(100vw - 48px));max-width:1000px}.exp{align-items:center;padding-left:0;padding-right:0}.exp-title,.exp-list{width:min(1000px,calc(100vw - 48px));max-width:1000px}.exp-title{max-width:min(1000px,calc(100vw - 48px))}}
     @media(min-width:901px) and (max-width:1048px){.super{--super-scale:calc((100vw - 48px)/1000);min-height:calc(176px + 500px * var(--super-scale))}.super-card{width:1000px;transform:scale(var(--super-scale));transform-origin:top center}}
     @media(max-width:900px){.clock,.available,.learn,.rate,.chips.specimen-card,.reading-widget,.orange,.linkedin,.photo-album{left:auto!important;right:auto!important;top:auto!important;width:min(430px,calc(100vw - 48px));height:auto;min-height:0;transform:none!important}.chips.specimen-card{padding:24px}.chips .chip-list.tags-container{grid-template-columns:1fr 1fr}.reading-widget{padding:24px}.reading-item{grid-template-columns:64px minmax(0,1fr)}.reading-progress{grid-column:2}.photo-album{height:274px}.orange{font-size:22px;line-height:34px}.linkedin{display:flex}.bottom-nav{bottom:24px}.timezone{display:block}}
@@ -1805,11 +1800,6 @@
 	      const update=()=>{
 	        ticking=false;
 	        const max=Math.max(1,section.offsetHeight-window.innerHeight);
-	        const viewportTop=window.scrollY;
-	        const viewportBottom=viewportTop+window.innerHeight;
-	        const sectionTop=section.offsetTop;
-	        const sectionBottom=sectionTop+section.offsetHeight;
-	        section.classList.toggle("is-life-active",viewportTop>=sectionTop&&viewportTop<sectionBottom);
 	        const raw=clamp((window.scrollY-section.offsetTop)/max);
 	        const progress=smooth(clamp((raw-.03)/.58));
 	        const albumProgress=smooth(clamp((raw-.50)/.42));
@@ -2099,7 +2089,7 @@
     function updateTime(){const el=document.getElementById("local-time");const ampm=document.getElementById("time-ampm");if(!el||!ampm)return;const parts=new Intl.DateTimeFormat(currentLang==="en"?"en-US":"zh-CN",{timeZone:"Asia/Shanghai",hour12:true,hour:"2-digit",minute:"2-digit",second:"2-digit"}).formatToParts(new Date());const time=["hour","minute","second"].map(t=>parts.find(p=>p.type===t)?.value||"00").join(":");const dayPeriod=parts.find(p=>p.type==="dayPeriod")?.value||"";el.childNodes[0].nodeValue=time+" ";ampm.textContent=dayPeriod}setInterval(updateTime,1000);updateTime();
     const COVERFLOW_PATH="subprojects/coverflow-player/dist/index.html";
     const COVERFLOW_LOCAL_ORIGIN="http://127.0.0.1:4182/";
-    const COVERFLOW_VERSION="vinyl-ui-20260608-4";
+    const COVERFLOW_VERSION="vinyl-ui-20260607-3";
     const normalizeCoverflowUrl=url=>{
       const target=url||COVERFLOW_PATH;
       try{
