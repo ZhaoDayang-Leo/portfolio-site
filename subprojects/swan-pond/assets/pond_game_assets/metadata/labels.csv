@@ -1,0 +1,78 @@
+id,category,file,x,y,width,height,anchor_x,anchor_y,tags,notes
+layer_dock_boardwalk_full,environment_layer,layers/layer_dock_boardwalk_full.png,1394,54,246,851,123.0,425.5,dock;walkable,One-piece dock/boardwalk layer. Contains original plank texture.
+layer_rock_bank_full,environment_layer,layers/layer_rock_bank_full.png,980,50,440,845,220.0,422.5,rocky_bank;collision,Whole visible rock field as a single layer/collision region.
+layer_right_shore_bank,environment_layer,layers/layer_right_shore_bank.png,1532,55,113,830,56.5,415.0,shore;non_water,Right dirt/gravel shore strip beside the dock.
+layer_water_playfield,environment_layer,layers/layer_water_playfield.png,35,50,1085,845,542.5,422.5,water;playfield,Primary water playfield layer; use as broad playable water zone.
+duck_01_top,duck,sprites/duck_01_top.png,785,145,53,85,26.5,42.5,animal;sprite;npc,
+duck_02_mid,duck,sprites/duck_02_mid.png,856,252,52,84,26.0,42.0,animal;sprite;npc,
+duck_03_lower_left,duck,sprites/duck_03_lower_left.png,814,390,58,90,29.0,45.0,animal;sprite;npc,
+duck_04_lower_right,duck,sprites/duck_04_lower_right.png,884,378,56,92,28.0,46.0,animal;sprite;npc,
+person_01_on_dock,character,sprites/person_01_on_dock.png,1455,428,77,65,38.5,32.5,human;npc;sprite,"Top-down person standing on dock, with small shadow."
+reeds_01_top_left,reeds,sprites/reeds_01_top_left.png,35,18,103,142,51.5,71.0,cattail;plant;decoration,
+reeds_02_left_mid,reeds,sprites/reeds_02_left_mid.png,29,585,61,110,30.5,55.0,cattail;plant;decoration,
+reeds_03_left_bottom,reeds,sprites/reeds_03_left_bottom.png,31,716,97,170,48.5,85.0,cattail;plant;decoration,
+reeds_04_bottom_left,reeds,sprites/reeds_04_bottom_left.png,370,775,145,117,72.5,58.5,cattail;plant;decoration,
+reeds_05_bottom_center,reeds,sprites/reeds_05_bottom_center.png,728,784,82,110,41.0,55.0,cattail;plant;decoration,
+sparkles_01_upper_left,sparkles,sprites/sparkles_01_upper_left.png,350,175,65,45,32.5,22.5,water;fx,
+sparkles_02_left_mid,sparkles,sprites/sparkles_02_left_mid.png,200,580,115,45,57.5,22.5,water;fx,
+sparkles_03_center,sparkles,sprites/sparkles_03_center.png,478,505,57,47,28.5,23.5,water;fx,
+sparkles_04_bottom_left,sparkles,sprites/sparkles_04_bottom_left.png,330,795,80,42,40.0,21.0,water;fx,
+sparkles_05_mid_bottom,sparkles,sprites/sparkles_05_mid_bottom.png,665,620,80,45,40.0,22.5,water;fx,
+sparkles_06_duck_zone,sparkles,sprites/sparkles_06_duck_zone.png,825,350,120,120,60.0,60.0,water;fx,
+underwater_rock_01_upper_mid,underwater_rock,sprites/underwater_rock_01_upper_mid.png,650,68,110,87,55.0,43.5,underwater;rock;decoration,Semi-transparent watercolor rock/patch visible under shallow water.
+underwater_rock_02_upper_mid_right,underwater_rock,sprites/underwater_rock_02_upper_mid_right.png,744,70,106,88,53.0,44.0,underwater;rock;decoration,Semi-transparent watercolor rock/patch visible under shallow water.
+underwater_rock_03_top_right,underwater_rock,sprites/underwater_rock_03_top_right.png,915,104,90,92,45.0,46.0,underwater;rock;decoration,Semi-transparent watercolor rock/patch visible under shallow water.
+underwater_rock_04_mid_left,underwater_rock,sprites/underwater_rock_04_mid_left.png,692,242,88,93,44.0,46.5,underwater;rock;decoration,Semi-transparent watercolor rock/patch visible under shallow water.
+underwater_rock_05_mid,underwater_rock,sprites/underwater_rock_05_mid.png,810,216,120,99,60.0,49.5,underwater;rock;decoration,Semi-transparent watercolor rock/patch visible under shallow water.
+underwater_rock_06_mid_right,underwater_rock,sprites/underwater_rock_06_mid_right.png,920,285,92,100,46.0,50.0,underwater;rock;decoration,Semi-transparent watercolor rock/patch visible under shallow water.
+underwater_rock_07_lower_mid_left,underwater_rock,sprites/underwater_rock_07_lower_mid_left.png,640,545,90,110,45.0,55.0,underwater;rock;decoration,Semi-transparent watercolor rock/patch visible under shallow water.
+underwater_rock_08_lower_mid,underwater_rock,sprites/underwater_rock_08_lower_mid.png,745,565,93,110,46.5,55.0,underwater;rock;decoration,Semi-transparent watercolor rock/patch visible under shallow water.
+underwater_rock_09_lower_right,underwater_rock,sprites/underwater_rock_09_lower_right.png,830,690,100,125,50.0,62.5,underwater;rock;decoration,Semi-transparent watercolor rock/patch visible under shallow water.
+underwater_rock_10_bottom_mid,underwater_rock,sprites/underwater_rock_10_bottom_mid.png,680,725,105,120,52.5,60.0,underwater;rock;decoration,Semi-transparent watercolor rock/patch visible under shallow water.
+underwater_rock_11_bottom_left,underwater_rock,sprites/underwater_rock_11_bottom_left.png,610,650,90,110,45.0,55.0,underwater;rock;decoration,Semi-transparent watercolor rock/patch visible under shallow water.
+underwater_rock_12_right_edge,underwater_rock,sprites/underwater_rock_12_right_edge.png,960,645,120,130,60.0,65.0,underwater;rock;decoration,Semi-transparent watercolor rock/patch visible under shallow water.
+rock_01_top_peach,rock,sprites/rock_01_top_peach.png,1302,50,116,98,58.0,49.0,rock;obstacle;decoration,
+rock_02_top_white_large,rock,sprites/rock_02_top_white_large.png,1205,58,114,102,57.0,51.0,rock;obstacle;decoration,
+rock_03_top_gray_white,rock,sprites/rock_03_top_gray_white.png,1112,80,98,98,49.0,49.0,rock;obstacle;decoration,
+rock_04_upper_brown_left,rock,sprites/rock_04_upper_brown_left.png,1017,142,94,96,47.0,48.0,rock;obstacle;decoration,
+rock_05_upper_peach_right,rock,sprites/rock_05_upper_peach_right.png,1248,128,114,119,57.0,59.5,rock;obstacle;decoration,
+rock_06_upper_gray_center,rock,sprites/rock_06_upper_gray_center.png,1144,168,94,80,47.0,40.0,rock;obstacle;decoration,
+rock_07_upper_small_white,rock,sprites/rock_07_upper_small_white.png,1324,180,64,74,32.0,37.0,rock;obstacle;decoration,
+rock_08_mid_white_left,rock,sprites/rock_08_mid_white_left.png,1087,240,101,102,50.5,51.0,rock;obstacle;decoration,
+rock_09_mid_light_center,rock,sprites/rock_09_mid_light_center.png,1172,210,95,102,47.5,51.0,rock;obstacle;decoration,
+rock_10_mid_peach_right,rock,sprites/rock_10_mid_peach_right.png,1291,248,110,108,55.0,54.0,rock;obstacle;decoration,
+rock_11_mid_gray_small,rock,sprites/rock_11_mid_gray_small.png,1202,292,86,88,43.0,44.0,rock;obstacle;decoration,
+rock_12_mid_white_right_small,rock,sprites/rock_12_mid_white_right_small.png,1340,334,75,86,37.5,43.0,rock;obstacle;decoration,
+rock_13_mid_brown_left,rock,sprites/rock_13_mid_brown_left.png,1035,310,113,122,56.5,61.0,rock;obstacle;decoration,
+rock_14_mid_brown_farleft,rock,sprites/rock_14_mid_brown_farleft.png,980,338,96,110,48.0,55.0,rock;obstacle;decoration,
+rock_15_mid_white_pink_left,rock,sprites/rock_15_mid_white_pink_left.png,1106,368,119,112,59.5,56.0,rock;obstacle;decoration,
+rock_16_mid_gray_center,rock,sprites/rock_16_mid_gray_center.png,1190,405,100,105,50.0,52.5,rock;obstacle;decoration,
+rock_17_mid_beige_large_right,rock,sprites/rock_17_mid_beige_large_right.png,1279,404,129,126,64.5,63.0,rock;obstacle;decoration,
+rock_18_lower_brown_left,rock,sprites/rock_18_lower_brown_left.png,1004,444,118,114,59.0,57.0,rock;obstacle;decoration,
+rock_19_lower_pink_large,rock,sprites/rock_19_lower_pink_large.png,1110,478,161,142,80.5,71.0,rock;obstacle;decoration,
+rock_20_lower_white_right,rock,sprites/rock_20_lower_white_right.png,1243,500,135,126,67.5,63.0,rock;obstacle;decoration,
+rock_21_lower_gray_left,rock,sprites/rock_21_lower_gray_left.png,1043,528,135,130,67.5,65.0,rock;obstacle;decoration,
+rock_22_lower_pink_small,rock,sprites/rock_22_lower_pink_small.png,1130,604,118,112,59.0,56.0,rock;obstacle;decoration,
+rock_23_lower_white_center_right,rock,sprites/rock_23_lower_white_center_right.png,1222,608,148,116,74.0,58.0,rock;obstacle;decoration,
+rock_24_lower_beige_edge,rock,sprites/rock_24_lower_beige_edge.png,1327,612,90,112,45.0,56.0,rock;obstacle;decoration,
+rock_25_lower_gray_far_left,rock,sprites/rock_25_lower_gray_far_left.png,1001,608,109,122,54.5,61.0,rock;obstacle;decoration,
+rock_26_bottom_gray_left,rock,sprites/rock_26_bottom_gray_left.png,1058,675,131,115,65.5,57.5,rock;obstacle;decoration,
+rock_27_bottom_white_large,rock,sprites/rock_27_bottom_white_large.png,1188,675,166,159,83.0,79.5,rock;obstacle;decoration,
+rock_28_bottom_beige_right,rock,sprites/rock_28_bottom_beige_right.png,1317,707,101,120,50.5,60.0,rock;obstacle;decoration,
+rock_29_bottom_pale_left,rock,sprites/rock_29_bottom_pale_left.png,1111,748,136,122,68.0,61.0,rock;obstacle;decoration,
+rock_30_bottom_beige_center,rock,sprites/rock_30_bottom_beige_center.png,1221,770,129,120,64.5,60.0,rock;obstacle;decoration,
+rock_31_bottom_white_far_left,rock,sprites/rock_31_bottom_white_far_left.png,1034,775,111,117,55.5,58.5,rock;obstacle;decoration,
+rock_32_top_tiny_gray,rock,sprites/rock_32_top_tiny_gray.png,1262,54,58,50,29.0,25.0,rock;obstacle;decoration,
+rock_33_upper_light_round,rock,sprites/rock_33_upper_light_round.png,1180,248,62,72,31.0,36.0,rock;obstacle;decoration,
+rock_34_upper_round_center,rock,sprites/rock_34_upper_round_center.png,1227,331,68,74,34.0,37.0,rock;obstacle;decoration,
+rock_35_right_mid_gray,rock,sprites/rock_35_right_mid_gray.png,1354,457,66,104,33.0,52.0,rock;obstacle;decoration,
+rock_36_bottom_small_white,rock,sprites/rock_36_bottom_small_white.png,1082,720,82,92,41.0,46.0,rock;obstacle;decoration,
+rock_37_bottom_small_pink,rock,sprites/rock_37_bottom_small_pink.png,1158,716,90,76,45.0,38.0,rock;obstacle;decoration,
+rock_38_bottom_edge_white,rock,sprites/rock_38_bottom_edge_white.png,1072,818,93,76,46.5,38.0,rock;obstacle;decoration,
+rock_39_mid_gray_pebble,rock,sprites/rock_39_mid_gray_pebble.png,1128,300,62,64,31.0,32.0,rock;obstacle;decoration,
+rock_40_mid_pink_pebble,rock,sprites/rock_40_mid_pink_pebble.png,1160,333,71,77,35.5,38.5,rock;obstacle;decoration,
+rock_41_lower_left_small_brown,rock,sprites/rock_41_lower_left_small_brown.png,965,520,95,100,47.5,50.0,rock;obstacle;decoration,
+rock_42_upper_left_small_brown,rock,sprites/rock_42_upper_left_small_brown.png,972,220,88,92,44.0,46.0,rock;obstacle;decoration,
+rock_43_center_greenish_shallow,rock,sprites/rock_43_center_greenish_shallow.png,925,365,97,105,48.5,52.5,rock;obstacle;decoration,
+rock_44_lower_center_brown,rock,sprites/rock_44_lower_center_brown.png,945,720,109,130,54.5,65.0,rock;obstacle;decoration,
+rock_45_top_water_edge_brown,rock,sprites/rock_45_top_water_edge_brown.png,1006,70,104,75,52.0,37.5,rock;obstacle;decoration,

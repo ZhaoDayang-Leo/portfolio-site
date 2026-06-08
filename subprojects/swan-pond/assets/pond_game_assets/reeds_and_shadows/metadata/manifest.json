@@ -1,0 +1,118 @@
+{
+  "canvas_size": [
+    1672,
+    941
+  ],
+  "assets": [
+    {
+      "id": "reed_01",
+      "source_group": "reed_01_top_left",
+      "reed_file": "reeds/reed_01.png",
+      "reed_top_left_px": [
+        55,
+        42
+      ],
+      "reed_size_px": [
+        99,
+        124
+      ],
+      "shadow_file": "shadows/reed_01_shadow.png",
+      "shadow_top_left_px": [
+        104,
+        132
+      ],
+      "shadow_size_px": [
+        32,
+        16
+      ]
+    },
+    {
+      "id": "reed_02",
+      "source_group": "reed_02_left_mid",
+      "reed_file": "reeds/reed_02.png",
+      "reed_top_left_px": [
+        64,
+        605
+      ],
+      "reed_size_px": [
+        49,
+        95
+      ],
+      "shadow_file": "shadows/reed_02_shadow.png",
+      "shadow_top_left_px": [
+        71,
+        630
+      ],
+      "shadow_size_px": [
+        27,
+        37
+      ]
+    },
+    {
+      "id": "reed_03",
+      "source_group": "reed_03_left_bottom",
+      "reed_file": "reeds/reed_03.png",
+      "reed_top_left_px": [
+        52,
+        724
+      ],
+      "reed_size_px": [
+        98,
+        169
+      ],
+      "shadow_file": "shadows/reed_03_shadow.png",
+      "shadow_top_left_px": [
+        69,
+        724
+      ],
+      "shadow_size_px": [
+        57,
+        152
+      ]
+    },
+    {
+      "id": "reed_04",
+      "source_group": "reed_04_bottom_left",
+      "reed_file": "reeds/reed_04.png",
+      "reed_top_left_px": [
+        383,
+        796
+      ],
+      "reed_size_px": [
+        109,
+        105
+      ],
+      "shadow_file": "shadows/reed_04_shadow.png",
+      "shadow_top_left_px": [
+        380,
+        814
+      ],
+      "shadow_size_px": [
+        114,
+        70
+      ]
+    },
+    {
+      "id": "reed_05",
+      "source_group": "reed_05_bottom_center",
+      "reed_file": "reeds/reed_05.png",
+      "reed_top_left_px": [
+        684,
+        793
+      ],
+      "reed_size_px": [
+        110,
+        109
+      ],
+      "shadow_file": "shadows/reed_05_shadow.png",
+      "shadow_top_left_px": [
+        697,
+        818
+      ],
+      "shadow_size_px": [
+        86,
+        64
+      ]
+    }
+  ]
+}

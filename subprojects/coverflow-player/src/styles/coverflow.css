@@ -1,0 +1,641 @@
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.coverflow-shell {
+  background:
+    radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.98), transparent 28%),
+    radial-gradient(circle at 82% 22%, rgba(248, 250, 252, 0.92), transparent 30%),
+    #ffffff;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.coverflow-shell::before,
+.coverflow-shell::after {
+  content: '';
+  position: absolute;
+  inset: -16%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.coverflow-shell::before {
+  background-image: var(--active-cover);
+  background-position: center;
+  background-size: cover;
+  filter: blur(90px) saturate(1.35);
+  opacity: 0.42;
+  transform: scale(1.1);
+}
+
+.coverflow-shell.has-featured-album::before {
+  opacity: 0;
+}
+
+.coverflow-shell::after {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.68) 46%, rgba(255, 255, 255, 0.92)),
+    radial-gradient(circle at 50% 52%, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.86) 64%);
+}
+
+.coverflow-shell.has-featured-album::after {
+  background: #ffffff;
+}
+
+#scroll-container {
+  perspective: 1500px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+}
+
+.coverflow-shell.is-hand-gesture-active #scroll-container {
+  scroll-snap-type: none;
+}
+
+.coverflow-shell.has-featured-album #scroll-container {
+  overflow-x: hidden;
+  cursor: default;
+}
+
+#scroll-container::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transition: opacity 0.52s ease;
+}
+
+.coverflow-shell.has-featured-album #scroll-container::before {
+  opacity: 0;
+}
+
+.scroll-content {
+  transform-style: preserve-3d;
+  position: relative;
+  z-index: 10;
+}
+
+.album-item {
+  transform-style: preserve-3d;
+  position: relative;
+  overflow: visible;
+  margin-inline: -132px;
+  transition: opacity 0.52s ease, filter 0.52s ease;
+}
+
+.coverflow-shell.has-featured-album .album-item[data-featured='false'] {
+  filter: blur(5px) saturate(0.78);
+  opacity: 0.38;
+}
+
+.coverflow-shell.has-featured-album .album-item[data-featured='true'] {
+  filter: none;
+  opacity: 1;
+}
+
+.coverflow-shell.has-featured-album .track-info {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Single transform group: rotateY / translateZ from coverflow3d.ts */
+.album-wrapper {
+  width: 320px;
+  height: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  overflow: visible;
+  will-change: transform;
+  --box-depth: 4px;
+  --box-half-depth: 2px;
+  --spine-color: #1a1a1a;
+  --frontness: 0;
+}
+
+.coverflow-shell.has-featured-album .album-wrapper {
+  transition: transform 0.82s cubic-bezier(0.18, 0.82, 0.16, 1), filter 0.52s ease;
+}
+
+.album-vinyl {
+  position: absolute;
+  top: 50%;
+  right: -47%;
+  z-index: 0;
+  width: 94%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-36%, -50%) scale(0.82);
+  transform-origin: 50% 50%;
+  transition:
+    opacity 0.42s ease,
+    transform 0.78s cubic-bezier(0.18, 0.82, 0.16, 1);
+  will-change: transform, opacity;
+}
+
+.album-vinyl-inner {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 50%, #111 0 15%, #050505 16% 100%),
+    repeating-radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 3px),
+    conic-gradient(from 218deg, transparent 0deg, rgba(255, 255, 255, 0.025) 28deg, rgba(255, 255, 255, 0.18) 42deg, rgba(255, 255, 255, 0.035) 58deg, transparent 86deg, transparent 184deg, rgba(255, 255, 255, 0.03) 210deg, rgba(255, 255, 255, 0.12) 226deg, rgba(255, 255, 255, 0.03) 244deg, transparent 278deg),
+    radial-gradient(circle at 42% 36%, rgba(255, 255, 255, 0.12), transparent 18%),
+    #080808;
+  box-shadow:
+    0 0 0 2px rgba(0, 0, 0, 0.92),
+    0 0 0 3px rgba(212, 185, 134, 0.7),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    inset 0 0 44px rgba(255, 255, 255, 0.045);
+  filter: contrast(1.08) brightness(0.82);
+  animation: vinyl-spin 4.8s linear infinite;
+  animation-play-state: paused;
+}
+
+.album-vinyl-inner::before {
+  content: '';
+  position: absolute;
+  inset: 3%;
+  border-radius: 50%;
+  background:
+    linear-gradient(118deg, transparent 0 37%, rgba(255, 255, 255, 0.12) 45%, rgba(255, 255, 255, 0.035) 56%, transparent 68% 100%),
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, rgba(255, 255, 255, 0.02) 9px 10px);
+  mix-blend-mode: screen;
+  opacity: 0.56;
+}
+
+.album-vinyl-inner::after {
+  content: '';
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.045);
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+}
+
+.album-vinyl-label {
+  position: absolute;
+  inset: 38%;
+  z-index: 2;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  box-shadow:
+    0 0 0 8px rgba(0, 0, 0, 0.68),
+    0 0 0 10px rgba(255, 255, 255, 0.035),
+    0 0 0 1px rgba(255, 255, 255, 0.22) inset,
+    inset 0 0 22px rgba(0, 0, 0, 0.28);
+}
+
+.album-vinyl-label::after {
+  content: '';
+  position: absolute;
+  inset: 42%;
+  border-radius: 50%;
+  background: #f8fafc;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.22);
+}
+
+.coverflow-shell.has-featured-album .album-item[data-featured='true'] .album-vinyl {
+  opacity: 1;
+  transform: translate(0, -50%) scale(0.98);
+  transition-delay: 0.18s;
+}
+
+.coverflow-shell.is-playing .album-item[data-featured='true'] .album-vinyl-inner {
+  animation-play-state: running;
+}
+
+/* Shared outer Z for all faces - spines must NOT get their own translateZ after rotateY */
+.album-cuboid {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  position: relative;
+  z-index: 2;
+  transform-style: preserve-3d;
+  transform: translateZ(var(--box-half-depth));
+  overflow: visible;
+}
+
+.album-face {
+  position: absolute;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+}
+
+.face-front {
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: 3px;
+  box-shadow:
+    0 24px 60px rgba(15, 23, 42, 0.24),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    inset 12px 0 22px rgba(255, 255, 255, 0.07),
+    inset -12px 0 24px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.face-front::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(118deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.08) 18%, transparent 34%, transparent 62%, rgba(255, 255, 255, 0.16) 74%, transparent 86%),
+    radial-gradient(circle at 72% 18%, rgba(255, 255, 255, 0.2), transparent 22%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12), transparent 8%, transparent 92%, rgba(0, 0, 0, 0.18));
+  mix-blend-mode: screen;
+  opacity: 0.52;
+}
+
+.face-front::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.album-wrapper[data-spine-side='left'] .face-front::after {
+  background:
+    linear-gradient(to right, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.06) 10px, transparent 26px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.12), transparent 14px);
+  opacity: calc(1 - var(--frontness));
+}
+
+.album-wrapper[data-spine-side='right'] .face-front::after {
+  background:
+    linear-gradient(to left, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.06) 10px, transparent 26px),
+    linear-gradient(to left, rgba(255, 255, 255, 0.12), transparent 14px);
+  opacity: calc(1 - var(--frontness));
+}
+
+/* Outward spine - soft blurred vertical gradient; hinge set in coverflow3d.ts */
+.face-spine {
+  top: 0;
+  bottom: 0;
+  width: var(--box-depth);
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--spine-color, #1a1a1a);
+  backface-visibility: visible;
+  border-radius: 0;
+}
+
+.face-spine::before {
+  content: '';
+  position: absolute;
+  inset: -12px -8px;
+  background: linear-gradient(
+    to bottom,
+    var(--spine-c1, var(--spine-color, #2a2a2a)),
+    var(--spine-c2, var(--spine-color, #1a1a1a)),
+    var(--spine-c3, var(--spine-color, #2a2a2a))
+  );
+  filter: blur(10px);
+  transform: scale(1.15);
+  pointer-events: none;
+}
+
+.face-spine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--spine-c1, var(--spine-color, #2a2a2a)),
+    var(--spine-c2, var(--spine-color, #1a1a1a)),
+    var(--spine-c3, var(--spine-color, #2a2a2a))
+  );
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.track-info {
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.album-feature-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 88px clamp(40px, 7vw, 120px) 124px;
+  pointer-events: none;
+}
+
+.feature-close-button {
+  position: fixed;
+  top: 28px;
+  right: 28px;
+  z-index: 1320;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  pointer-events: auto;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.feature-close-button:hover {
+  transform: scale(1.06);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.feature-close-button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+@media (max-width: 900px) {
+  .feature-close-button {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.hand-gesture-control {
+  position: fixed;
+  top: 28px;
+  left: 28px;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hand-gesture-video {
+  position: absolute;
+  left: 0;
+  top: 54px;
+  width: 92px;
+  height: 68px;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 10px;
+  object-fit: cover;
+  transform: scaleX(-1);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.hand-gesture-video.active {
+  opacity: 0.72;
+  transform: scaleX(-1) translateY(0);
+}
+
+.hand-gesture-button {
+  height: 44px;
+  min-width: 112px;
+  padding: 0 18px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: rgba(15, 23, 42, 0.72);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.hand-gesture-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.24);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.hand-gesture-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
+}
+
+.hand-gesture-button.active {
+  color: #0f172a;
+  border-color: rgba(37, 99, 235, 0.36);
+}
+
+.hand-gesture-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(100, 116, 139, 0.7);
+  box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+}
+
+.hand-gesture-button.active .hand-gesture-dot {
+  background: #2563eb;
+  box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.12);
+}
+
+@media (max-width: 900px) {
+  .hand-gesture-control {
+    top: 16px;
+    left: 16px;
+  }
+
+  .hand-gesture-video {
+    top: 50px;
+  }
+
+  .hand-gesture-button {
+    height: 40px;
+    min-width: 104px;
+    padding: 0 16px;
+    font-size: 14px;
+  }
+}
+
+.hand-pinch-indicator {
+  position: fixed;
+  left: var(--hand-x, 50vw);
+  top: var(--hand-y, 50vh);
+  z-index: 62;
+  width: 54px;
+  height: 54px;
+  border: 2px solid rgba(37, 99, 235, 0.36);
+  border-radius: 999px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.86);
+  transition:
+    opacity 0.12s ease,
+    transform 0.12s ease,
+    border-color 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+.hand-pinch-indicator::before,
+.hand-pinch-indicator::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.62);
+  transform: translateY(-50%);
+  transition: transform 0.14s ease, opacity 0.14s ease;
+}
+
+.hand-pinch-indicator::before {
+  left: -4px;
+}
+
+.hand-pinch-indicator::after {
+  right: -4px;
+}
+
+.hand-pinch-indicator.visible {
+  opacity: 1;
+}
+
+.hand-pinch-indicator.pinching {
+  border-color: rgba(37, 99, 235, 0.9);
+  box-shadow: 0 0 0 10px rgba(37, 99, 235, 0.12);
+  transform: translate(-50%, -50%) scale(0.72);
+}
+
+.hand-pinch-indicator.pinching::before {
+  transform: translate(14px, -50%);
+}
+
+.hand-pinch-indicator.pinching::after {
+  transform: translate(-14px, -50%);
+}
+
+.hand-pinch-indicator.lifting {
+  border-color: rgba(16, 185, 129, 0.95);
+  box-shadow: 0 0 0 14px rgba(16, 185, 129, 0.14);
+}
+
+.hand-pinch-indicator.lifting::before,
+.hand-pinch-indicator.lifting::after {
+  background: rgba(16, 185, 129, 0.85);
+}
+
+.feature-copy {
+  width: min(560px, 40vw);
+  max-height: 62vh;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  pointer-events: auto;
+  animation: feature-copy-in 0.58s cubic-bezier(0.18, 0.82, 0.16, 1) both;
+}
+
+.feature-kicker {
+  display: none;
+  margin: 0 0 10px;
+  color: rgba(15, 23, 42, 0.48);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.feature-copy h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 54px;
+  line-height: 1.02;
+  font-weight: 800;
+}
+
+.feature-artist {
+  margin: 14px 0 30px;
+  color: rgba(15, 23, 42, 0.62);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.feature-lyrics {
+  height: min(340px, 34vh);
+  overflow: hidden;
+  color: rgba(15, 23, 42, 0.66);
+  font-size: 16px;
+  line-height: 1.55;
+  font-weight: 600;
+  mask-image: linear-gradient(to bottom, transparent, black 18%, black 76%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 18%, black 76%, transparent);
+}
+
+.feature-lyrics-track {
+  transition: transform 0.48s cubic-bezier(0.2, 0.82, 0.18, 1);
+  will-change: transform;
+}
+
+.feature-lyrics p {
+  min-height: 34px;
+  margin: 0;
+  color: rgba(15, 23, 42, 0.38);
+  transform-origin: left center;
+  transition: color 0.28s ease, opacity 0.28s ease, transform 0.28s ease;
+}
+
+.feature-lyrics p.active {
+  color: rgba(15, 23, 42, 0.88);
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+@keyframes feature-copy-in {
+  from {
+    opacity: 0;
+    transform: translateX(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes vinyl-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

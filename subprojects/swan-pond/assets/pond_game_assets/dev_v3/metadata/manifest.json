@@ -1,0 +1,21 @@
+{
+  "variant": "development_priority_v3",
+  "canvas_size": [
+    1672,
+    941
+  ],
+  "background": "backgrounds/background_clean_base.png",
+  "sprites": {
+    "swans": [
+      "sprites/swans/swan_01.png",
+      "sprites/swans/swan_02.png",
+      "sprites/swans/swan_03.png",
+      "sprites/swans/swan_04.png"
+    ],
+    "person": "sprites/person/person_01.png"
+  },
+  "notes": [
+    "Edge reed areas are baked into the background.",
+    "Static swans/person removed from background."
+  ]
+}

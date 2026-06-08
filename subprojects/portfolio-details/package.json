@@ -1,0 +1,8 @@
+{
+  "name": "portfolio-case-studies",
+  "private": true,
+  "scripts": {
+    "start": "python3 -m http.server 3456",
+    "extract-images": "python3 scripts/extract_images.py"
+  }
+}

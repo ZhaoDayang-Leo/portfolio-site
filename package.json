@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-site",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "install:player": "npm --prefix subprojects/coverflow-player install",
+    "start:main": "python3 -m http.server 4182 --bind 127.0.0.1",
+    "start:details": "cd subprojects/portfolio-details && python3 -m http.server 3458 --bind 127.0.0.1",
+    "start:player": "npm --prefix subprojects/coverflow-player run dev -- --host 127.0.0.1 --port 5176",
+    "start:swan": "cd subprojects/swan-pond && python3 -m http.server 4191 --bind 127.0.0.1",
+    "start": "sh -c 'npm run start:main & npm run start:details & npm run start:player & wait'"
+  }
+}

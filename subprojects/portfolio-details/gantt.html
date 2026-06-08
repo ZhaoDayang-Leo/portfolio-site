@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>树形甘特 · 赵东阳</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css?v=20260519-1" />
+  </head>
+  <body>
+    <div class="case-layout">
+      <nav class="case-nav" aria-label="章节导航">
+        <ul class="case-nav__links">
+          <li><a href="#overview">项目背景</a></li>
+          <li><a href="#problem">问题定义</a></li>
+          <li><a href="#model">结构模型</a></li>
+          <li><a href="#solution">设计细节</a></li>
+          <li><a href="#reuse">模型复用</a></li>
+        </ul>
+        <p class="case-nav__meta">Meegle 甘特能力<br />复杂 B 端 IA</p>
+      </nav>
+
+      <main class="case-main">
+        <header class="case-hero">
+          <p class="case-hero__eyebrow">Case 03 / Complex B2B</p>
+          <h1 class="case-hero__title">在同一视图里，看懂结构，也看懂时间。</h1>
+          <p class="case-hero__subtitle">
+            树形甘特：在复杂层级项目中同时表达工作项结构、排期、状态与责任，并沉淀可复用的甘特底层模型。
+          </p>
+          <dl class="case-hero__meta">
+            <div>
+              <dt>角色</dt>
+              <dd>信息架构 / 视觉编码 / 交互设计</dd>
+            </div>
+            <div>
+              <dt>场景</dt>
+              <dd>树形甘特、工作项甘特、全景、IPD、人员排期</dd>
+            </div>
+            <div>
+              <dt>产品</dt>
+              <dd>飞书项目 Meegle · Gantt</dd>
+            </div>
+          </dl>
+        </header>
+
+        <section class="case-section" id="overview">
+          <p class="case-section__label">项目背景</p>
+          <h2 class="case-section__title">典型复杂 B 端需求：数据复杂，视图必须可读。</h2>
+          <p class="case-section__lead">
+            甘特能力帮助用户理解项目排期、任务依赖、人员安排和整体进度。难点在于项目管理数据本身复杂：需求、缺陷、任务等工作项类型不同，节点流、状态流、子任务、负责人和时间排期交织在一起。
+          </p>
+          <figure class="figure figure--wide">
+            <img src="public/images/gantt/hero.png" alt="甘特项目概览" loading="lazy" />
+          </figure>
+        </section>
+
+        <section class="case-section" id="problem">
+          <p class="case-section__label">问题定义</p>
+          <h2 class="case-section__title">树形视图看得见层级，却看不见节奏。</h2>
+          <p class="case-section__lead">
+            原有树形视图主要有三类问题：不同工作项字段横向不一致，列含义难对齐；用户能看到层级，却看不到时间轴上的整体排期；结构查看和排期调整需要来回切换，效率不足。
+          </p>
+          <figure class="figure figure--wide">
+            <img src="public/images/gantt/background.png" alt="项目背景与问题分析" loading="lazy" />
+          </figure>
+          <div class="insight-grid">
+            <article class="insight-card">
+              <h4>设计目标</h4>
+              <p>保留树形层级，引入甘特时间轴，同时回答「项目由什么构成」和「这些内容何时发生」。</p>
+            </article>
+            <article class="insight-card">
+              <h4>需求</h4>
+              <p>通常由多个流程节点构成，重点关注阶段推进和节点状态。</p>
+            </article>
+            <article class="insight-card">
+              <h4>缺陷 / 任务</h4>
+              <p>缺陷更接近状态流，任务更轻量，两者需要在图形表达上清晰区分。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="case-section" id="model">
+          <p class="case-section__label">结构模型</p>
+          <h2 class="case-section__title">左右分栏：结构在左，时间在右。</h2>
+          <p class="case-section__lead">
+            左侧树形结构负责表达层级关系和基础信息，右侧甘特区域负责表达时间、进度和排期关系。用户可以只看树形，也可以打开甘特做排期分析，并在当前视图内完成筛选、展开、定位和拖拽调整。
+          </p>
+          <figure class="figure figure--wide">
+            <img src="public/images/gantt/model.png" alt="数据模型与信息架构" loading="lazy" />
+          </figure>
+        </section>
+
+        <div class="band">
+          <section class="case-section" id="solution">
+            <p class="case-section__label">设计细节</p>
+            <h2 class="case-section__title">信息编码 + 交互效率。</h2>
+            <p class="case-section__lead">
+              左侧用 Icon 与颜色区分工作项类型，比 Tag 更节省空间，也更适合高密度场景。任务勾选、节点状态色与右侧甘特条颜色线索保持一致，帮助用户快速建立结构与排期的对应关系。
+            </p>
+            <figure class="figure figure--wide">
+              <img src="public/images/gantt/details.png" alt="视觉编码与交互细节" loading="lazy" />
+            </figure>
+            <figure class="figure figure--wide">
+              <img src="public/images/gantt/before-after.png" alt="树形甘特改版前后" loading="lazy" />
+              <figcaption>从逐条查看信息，升级为整体理解项目节奏、排期重叠和延期风险</figcaption>
+            </figure>
+          </section>
+        </div>
+
+        <section class="case-section" id="reuse">
+          <p class="case-section__label">模型复用</p>
+          <h2 class="case-section__title">右侧时间轴统一，左侧随业务切换。</h2>
+          <p class="case-section__lead">
+            这个项目最终沉淀为一套通用甘特模型：右侧时间轴和甘特交互保持统一，左侧根据业务场景切换不同结构。树形甘特、工作项甘特、项目全景、IPD 阶段和人员排期都可以复用同一套底层能力。
+          </p>
+          <figure class="figure figure--wide">
+            <img src="public/images/gantt/reuse-model.png" alt="甘特底层模型多场景复用" loading="lazy" />
+          </figure>
+        </section>
+
+        <footer class="case-footer">
+          <p class="case-footer__label">全部案例</p>
+          <div class="case-footer__links">
+            <a href="metrics.html">度量 3.0</a>
+            <span>·</span>
+            <a href="gantt.html">树形甘特</a>
+            <span>·</span>
+            <a href="rebranding.html?v=3">UI Rebranding</a>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

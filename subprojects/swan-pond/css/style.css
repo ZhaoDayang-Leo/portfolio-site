@@ -1,0 +1,73 @@
+:root {
+  color-scheme: light;
+  --paper: #fbf2e5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: var(--paper);
+  overflow: hidden;
+}
+
+.pond-page {
+  width: 100vw;
+  height: 100svh;
+  padding: 0;
+  overflow: hidden;
+}
+
+.pond-frame {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--paper);
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.pond-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  box-shadow: inset 0 0 52px rgba(119, 83, 43, 0.08);
+}
+
+.pond-frame::after {
+  content: "";
+  position: absolute;
+  inset: -28px;
+  z-index: 5;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 9%, rgba(255, 255, 255, 0.46), transparent 14%),
+    radial-gradient(circle at 96% 82%, rgba(255, 255, 255, 0.38), transparent 16%);
+  mix-blend-mode: soft-light;
+}
+
+canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 760px) {
+  .pond-frame {
+    width: 100vw;
+    height: 100svh;
+  }
+}

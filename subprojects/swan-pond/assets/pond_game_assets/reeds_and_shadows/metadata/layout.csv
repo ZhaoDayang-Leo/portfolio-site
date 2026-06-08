@@ -1,0 +1,6 @@
+id,reed_file,reed_top_left_x,reed_top_left_y,shadow_file,shadow_top_left_x,shadow_top_left_y
+reed_01,reeds/reed_01.png,55,42,shadows/reed_01_shadow.png,104,132
+reed_02,reeds/reed_02.png,64,605,shadows/reed_02_shadow.png,71,630
+reed_03,reeds/reed_03.png,52,724,shadows/reed_03_shadow.png,69,724
+reed_04,reeds/reed_04.png,383,796,shadows/reed_04_shadow.png,380,814
+reed_05,reeds/reed_05.png,684,793,shadows/reed_05_shadow.png,697,818

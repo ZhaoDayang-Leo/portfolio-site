@@ -1,0 +1,26 @@
+.DS_Store
+Thumbs.db
+
+# Local dependencies and caches
+node_modules/
+**/node_modules/
+.cache/
+.vite/
+.agents/
+.trae-cn/
+
+# Local logs
+log/
+*.log
+
+# Local verification screenshots and scratch exports
+tmp-*.png
+*-check.png
+*-verification.png
+scroll-sequence-*.png
+player-verification.png
+exports/
+
+# OS/editor files
+.idea/
+.vscode/

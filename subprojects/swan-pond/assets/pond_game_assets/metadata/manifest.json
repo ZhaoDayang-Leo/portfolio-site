@@ -1,0 +1,3755 @@
+{
+  "project": "pond_interactive_game_assets",
+  "source_image": "background_full_original.png",
+  "coordinate_space": {
+    "origin": "top_left",
+    "width": 1672,
+    "height": 941,
+    "units": "pixels"
+  },
+  "recommended_layer_order": [
+    "background_inpainted_no_characters.png",
+    "layers/layer_water_playfield.png",
+    "layers/layer_rock_bank_full.png",
+    "layers/layer_dock_boardwalk_full.png",
+    "sprites/reeds_*.png",
+    "sprites/duck_*.png",
+    "sprites/person_01_on_dock.png",
+    "sprites/sparkles_*.png"
+  ],
+  "notes": [
+    "Each PNG asset is cropped from the supplied image and exported with transparency where practical.",
+    "All bbox coordinates refer to the original 1672x941 image.",
+    "The inpainted background is provided as a convenience layer for a game prototype; keep the original source for reference.",
+    "Rocks are exported as approximate ellipse-cut individual sprites because the watercolor stones overlap."
+  ],
+  "assets": [
+    {
+      "id": "layer_dock_boardwalk_full",
+      "category": "environment_layer",
+      "file": "layers/layer_dock_boardwalk_full.png",
+      "bbox_xyxy": [
+        1394,
+        54,
+        1640,
+        905
+      ],
+      "bbox_xywh": [
+        1394,
+        54,
+        246,
+        851
+      ],
+      "anchor_px": [
+        123.0,
+        425.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "poly",
+      "polygon": [
+        [
+          1404,
+          60
+        ],
+        [
+          1550,
+          60
+        ],
+        [
+          1550,
+          695
+        ],
+        [
+          1582,
+          740
+        ],
+        [
+          1627,
+          825
+        ],
+        [
+          1592,
+          875
+        ],
+        [
+          1501,
+          900
+        ],
+        [
+          1435,
+          800
+        ],
+        [
+          1406,
+          710
+        ]
+      ],
+      "tags": [
+        "dock",
+        "walkable"
+      ],
+      "notes": "One-piece dock/boardwalk layer. Contains original plank texture.",
+      "asset_size_px": [
+        246,
+        851
+      ],
+      "suggested_collider": {
+        "type": "polygon",
+        "points": [
+          [
+            1404,
+            60
+          ],
+          [
+            1550,
+            60
+          ],
+          [
+            1550,
+            695
+          ],
+          [
+            1582,
+            740
+          ],
+          [
+            1627,
+            825
+          ],
+          [
+            1592,
+            875
+          ],
+          [
+            1501,
+            900
+          ],
+          [
+            1435,
+            800
+          ],
+          [
+            1406,
+            710
+          ]
+        ]
+      }
+    },
+    {
+      "id": "layer_rock_bank_full",
+      "category": "environment_layer",
+      "file": "layers/layer_rock_bank_full.png",
+      "bbox_xyxy": [
+        980,
+        50,
+        1420,
+        895
+      ],
+      "bbox_xywh": [
+        980,
+        50,
+        440,
+        845
+      ],
+      "anchor_px": [
+        220.0,
+        422.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "poly",
+      "polygon": [
+        [
+          1010,
+          58
+        ],
+        [
+          1412,
+          58
+        ],
+        [
+          1412,
+          890
+        ],
+        [
+          998,
+          890
+        ],
+        [
+          1005,
+          740
+        ],
+        [
+          988,
+          630
+        ],
+        [
+          1000,
+          500
+        ],
+        [
+          986,
+          360
+        ],
+        [
+          1008,
+          210
+        ]
+      ],
+      "tags": [
+        "rocky_bank",
+        "collision"
+      ],
+      "notes": "Whole visible rock field as a single layer/collision region.",
+      "asset_size_px": [
+        440,
+        845
+      ],
+      "suggested_collider": {
+        "type": "polygon",
+        "points": [
+          [
+            1010,
+            58
+          ],
+          [
+            1412,
+            58
+          ],
+          [
+            1412,
+            890
+          ],
+          [
+            998,
+            890
+          ],
+          [
+            1005,
+            740
+          ],
+          [
+            988,
+            630
+          ],
+          [
+            1000,
+            500
+          ],
+          [
+            986,
+            360
+          ],
+          [
+            1008,
+            210
+          ]
+        ]
+      }
+    },
+    {
+      "id": "layer_right_shore_bank",
+      "category": "environment_layer",
+      "file": "layers/layer_right_shore_bank.png",
+      "bbox_xyxy": [
+        1532,
+        55,
+        1645,
+        885
+      ],
+      "bbox_xywh": [
+        1532,
+        55,
+        113,
+        830
+      ],
+      "anchor_px": [
+        56.5,
+        415.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "poly",
+      "polygon": [
+        [
+          1538,
+          60
+        ],
+        [
+          1616,
+          72
+        ],
+        [
+          1624,
+          155
+        ],
+        [
+          1607,
+          260
+        ],
+        [
+          1608,
+          415
+        ],
+        [
+          1600,
+          560
+        ],
+        [
+          1640,
+          680
+        ],
+        [
+          1638,
+          845
+        ],
+        [
+          1588,
+          879
+        ],
+        [
+          1550,
+          798
+        ],
+        [
+          1546,
+          730
+        ],
+        [
+          1546,
+          60
+        ]
+      ],
+      "tags": [
+        "shore",
+        "non_water"
+      ],
+      "notes": "Right dirt/gravel shore strip beside the dock.",
+      "asset_size_px": [
+        113,
+        830
+      ],
+      "suggested_collider": {
+        "type": "polygon",
+        "points": [
+          [
+            1538,
+            60
+          ],
+          [
+            1616,
+            72
+          ],
+          [
+            1624,
+            155
+          ],
+          [
+            1607,
+            260
+          ],
+          [
+            1608,
+            415
+          ],
+          [
+            1600,
+            560
+          ],
+          [
+            1640,
+            680
+          ],
+          [
+            1638,
+            845
+          ],
+          [
+            1588,
+            879
+          ],
+          [
+            1550,
+            798
+          ],
+          [
+            1546,
+            730
+          ],
+          [
+            1546,
+            60
+          ]
+        ]
+      }
+    },
+    {
+      "id": "layer_water_playfield",
+      "category": "environment_layer",
+      "file": "layers/layer_water_playfield.png",
+      "bbox_xyxy": [
+        35,
+        50,
+        1120,
+        895
+      ],
+      "bbox_xywh": [
+        35,
+        50,
+        1085,
+        845
+      ],
+      "anchor_px": [
+        542.5,
+        422.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "poly",
+      "polygon": [
+        [
+          56,
+          58
+        ],
+        [
+          1000,
+          58
+        ],
+        [
+          1000,
+          100
+        ],
+        [
+          1110,
+          95
+        ],
+        [
+          1100,
+          890
+        ],
+        [
+          55,
+          890
+        ],
+        [
+          44,
+          825
+        ],
+        [
+          50,
+          600
+        ],
+        [
+          40,
+          280
+        ],
+        [
+          52,
+          95
+        ]
+      ],
+      "tags": [
+        "water",
+        "playfield"
+      ],
+      "notes": "Primary water playfield layer; use as broad playable water zone.",
+      "asset_size_px": [
+        1085,
+        845
+      ],
+      "suggested_collider": {
+        "type": "polygon",
+        "points": [
+          [
+            56,
+            58
+          ],
+          [
+            1000,
+            58
+          ],
+          [
+            1000,
+            100
+          ],
+          [
+            1110,
+            95
+          ],
+          [
+            1100,
+            890
+          ],
+          [
+            55,
+            890
+          ],
+          [
+            44,
+            825
+          ],
+          [
+            50,
+            600
+          ],
+          [
+            40,
+            280
+          ],
+          [
+            52,
+            95
+          ]
+        ]
+      }
+    },
+    {
+      "id": "duck_01_top",
+      "category": "duck",
+      "file": "sprites/duck_01_top.png",
+      "bbox_xyxy": [
+        785,
+        145,
+        838,
+        230
+      ],
+      "bbox_xywh": [
+        785,
+        145,
+        53,
+        85
+      ],
+      "anchor_px": [
+        26.5,
+        42.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "duck",
+      "polygon": null,
+      "tags": [
+        "animal",
+        "sprite",
+        "npc"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        53,
+        85
+      ],
+      "suggested_collider": {
+        "type": "circle",
+        "center": [
+          811,
+          187
+        ],
+        "radius": 27
+      }
+    },
+    {
+      "id": "duck_02_mid",
+      "category": "duck",
+      "file": "sprites/duck_02_mid.png",
+      "bbox_xyxy": [
+        856,
+        252,
+        908,
+        336
+      ],
+      "bbox_xywh": [
+        856,
+        252,
+        52,
+        84
+      ],
+      "anchor_px": [
+        26.0,
+        42.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "duck",
+      "polygon": null,
+      "tags": [
+        "animal",
+        "sprite",
+        "npc"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        52,
+        84
+      ],
+      "suggested_collider": {
+        "type": "circle",
+        "center": [
+          882,
+          294
+        ],
+        "radius": 26
+      }
+    },
+    {
+      "id": "duck_03_lower_left",
+      "category": "duck",
+      "file": "sprites/duck_03_lower_left.png",
+      "bbox_xyxy": [
+        814,
+        390,
+        872,
+        480
+      ],
+      "bbox_xywh": [
+        814,
+        390,
+        58,
+        90
+      ],
+      "anchor_px": [
+        29.0,
+        45.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "duck",
+      "polygon": null,
+      "tags": [
+        "animal",
+        "sprite",
+        "npc"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        58,
+        90
+      ],
+      "suggested_collider": {
+        "type": "circle",
+        "center": [
+          843,
+          435
+        ],
+        "radius": 28
+      }
+    },
+    {
+      "id": "duck_04_lower_right",
+      "category": "duck",
+      "file": "sprites/duck_04_lower_right.png",
+      "bbox_xyxy": [
+        884,
+        378,
+        940,
+        470
+      ],
+      "bbox_xywh": [
+        884,
+        378,
+        56,
+        92
+      ],
+      "anchor_px": [
+        28.0,
+        46.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "duck",
+      "polygon": null,
+      "tags": [
+        "animal",
+        "sprite",
+        "npc"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        56,
+        92
+      ],
+      "suggested_collider": {
+        "type": "circle",
+        "center": [
+          912,
+          424
+        ],
+        "radius": 29
+      }
+    },
+    {
+      "id": "person_01_on_dock",
+      "category": "character",
+      "file": "sprites/person_01_on_dock.png",
+      "bbox_xyxy": [
+        1455,
+        428,
+        1532,
+        493
+      ],
+      "bbox_xywh": [
+        1455,
+        428,
+        77,
+        65
+      ],
+      "anchor_px": [
+        38.5,
+        32.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "person",
+      "polygon": null,
+      "tags": [
+        "human",
+        "npc",
+        "sprite"
+      ],
+      "notes": "Top-down person standing on dock, with small shadow.",
+      "asset_size_px": [
+        77,
+        65
+      ],
+      "suggested_collider": {
+        "type": "circle",
+        "center": [
+          1493,
+          460
+        ],
+        "radius": 24
+      }
+    },
+    {
+      "id": "reeds_01_top_left",
+      "category": "reeds",
+      "file": "sprites/reeds_01_top_left.png",
+      "bbox_xyxy": [
+        35,
+        18,
+        138,
+        160
+      ],
+      "bbox_xywh": [
+        35,
+        18,
+        103,
+        142
+      ],
+      "anchor_px": [
+        51.5,
+        71.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "reeds",
+      "polygon": null,
+      "tags": [
+        "cattail",
+        "plant",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        103,
+        142
+      ],
+      "suggested_collider": {
+        "type": "rect",
+        "bbox_xyxy": [
+          35,
+          18,
+          138,
+          160
+        ]
+      }
+    },
+    {
+      "id": "reeds_02_left_mid",
+      "category": "reeds",
+      "file": "sprites/reeds_02_left_mid.png",
+      "bbox_xyxy": [
+        29,
+        585,
+        90,
+        695
+      ],
+      "bbox_xywh": [
+        29,
+        585,
+        61,
+        110
+      ],
+      "anchor_px": [
+        30.5,
+        55.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "reeds",
+      "polygon": null,
+      "tags": [
+        "cattail",
+        "plant",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        61,
+        110
+      ],
+      "suggested_collider": {
+        "type": "rect",
+        "bbox_xyxy": [
+          29,
+          585,
+          90,
+          695
+        ]
+      }
+    },
+    {
+      "id": "reeds_03_left_bottom",
+      "category": "reeds",
+      "file": "sprites/reeds_03_left_bottom.png",
+      "bbox_xyxy": [
+        31,
+        716,
+        128,
+        886
+      ],
+      "bbox_xywh": [
+        31,
+        716,
+        97,
+        170
+      ],
+      "anchor_px": [
+        48.5,
+        85.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "reeds",
+      "polygon": null,
+      "tags": [
+        "cattail",
+        "plant",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        97,
+        170
+      ],
+      "suggested_collider": {
+        "type": "rect",
+        "bbox_xyxy": [
+          31,
+          716,
+          128,
+          886
+        ]
+      }
+    },
+    {
+      "id": "reeds_04_bottom_left",
+      "category": "reeds",
+      "file": "sprites/reeds_04_bottom_left.png",
+      "bbox_xyxy": [
+        370,
+        775,
+        515,
+        892
+      ],
+      "bbox_xywh": [
+        370,
+        775,
+        145,
+        117
+      ],
+      "anchor_px": [
+        72.5,
+        58.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "reeds",
+      "polygon": null,
+      "tags": [
+        "cattail",
+        "plant",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        145,
+        117
+      ],
+      "suggested_collider": {
+        "type": "rect",
+        "bbox_xyxy": [
+          370,
+          775,
+          515,
+          892
+        ]
+      }
+    },
+    {
+      "id": "reeds_05_bottom_center",
+      "category": "reeds",
+      "file": "sprites/reeds_05_bottom_center.png",
+      "bbox_xyxy": [
+        728,
+        784,
+        810,
+        894
+      ],
+      "bbox_xywh": [
+        728,
+        784,
+        82,
+        110
+      ],
+      "anchor_px": [
+        41.0,
+        55.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "reeds",
+      "polygon": null,
+      "tags": [
+        "cattail",
+        "plant",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        82,
+        110
+      ],
+      "suggested_collider": {
+        "type": "rect",
+        "bbox_xyxy": [
+          728,
+          784,
+          810,
+          894
+        ]
+      }
+    },
+    {
+      "id": "sparkles_01_upper_left",
+      "category": "sparkles",
+      "file": "sprites/sparkles_01_upper_left.png",
+      "bbox_xyxy": [
+        350,
+        175,
+        415,
+        220
+      ],
+      "bbox_xywh": [
+        350,
+        175,
+        65,
+        45
+      ],
+      "anchor_px": [
+        32.5,
+        22.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "sparkle",
+      "polygon": null,
+      "tags": [
+        "water",
+        "fx"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        65,
+        45
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "sparkles_02_left_mid",
+      "category": "sparkles",
+      "file": "sprites/sparkles_02_left_mid.png",
+      "bbox_xyxy": [
+        200,
+        580,
+        315,
+        625
+      ],
+      "bbox_xywh": [
+        200,
+        580,
+        115,
+        45
+      ],
+      "anchor_px": [
+        57.5,
+        22.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "sparkle",
+      "polygon": null,
+      "tags": [
+        "water",
+        "fx"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        115,
+        45
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "sparkles_03_center",
+      "category": "sparkles",
+      "file": "sprites/sparkles_03_center.png",
+      "bbox_xyxy": [
+        478,
+        505,
+        535,
+        552
+      ],
+      "bbox_xywh": [
+        478,
+        505,
+        57,
+        47
+      ],
+      "anchor_px": [
+        28.5,
+        23.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "sparkle",
+      "polygon": null,
+      "tags": [
+        "water",
+        "fx"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        57,
+        47
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "sparkles_04_bottom_left",
+      "category": "sparkles",
+      "file": "sprites/sparkles_04_bottom_left.png",
+      "bbox_xyxy": [
+        330,
+        795,
+        410,
+        837
+      ],
+      "bbox_xywh": [
+        330,
+        795,
+        80,
+        42
+      ],
+      "anchor_px": [
+        40.0,
+        21.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "sparkle",
+      "polygon": null,
+      "tags": [
+        "water",
+        "fx"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        80,
+        42
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "sparkles_05_mid_bottom",
+      "category": "sparkles",
+      "file": "sprites/sparkles_05_mid_bottom.png",
+      "bbox_xyxy": [
+        665,
+        620,
+        745,
+        665
+      ],
+      "bbox_xywh": [
+        665,
+        620,
+        80,
+        45
+      ],
+      "anchor_px": [
+        40.0,
+        22.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "sparkle",
+      "polygon": null,
+      "tags": [
+        "water",
+        "fx"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        80,
+        45
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "sparkles_06_duck_zone",
+      "category": "sparkles",
+      "file": "sprites/sparkles_06_duck_zone.png",
+      "bbox_xyxy": [
+        825,
+        350,
+        945,
+        470
+      ],
+      "bbox_xywh": [
+        825,
+        350,
+        120,
+        120
+      ],
+      "anchor_px": [
+        60.0,
+        60.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "sparkle",
+      "polygon": null,
+      "tags": [
+        "water",
+        "fx"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        120,
+        120
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "underwater_rock_01_upper_mid",
+      "category": "underwater_rock",
+      "file": "sprites/underwater_rock_01_upper_mid.png",
+      "bbox_xyxy": [
+        650,
+        68,
+        760,
+        155
+      ],
+      "bbox_xywh": [
+        650,
+        68,
+        110,
+        87
+      ],
+      "anchor_px": [
+        55.0,
+        43.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse_soft",
+      "polygon": null,
+      "tags": [
+        "underwater",
+        "rock",
+        "decoration"
+      ],
+      "notes": "Semi-transparent watercolor rock/patch visible under shallow water.",
+      "asset_size_px": [
+        110,
+        87
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "underwater_rock_02_upper_mid_right",
+      "category": "underwater_rock",
+      "file": "sprites/underwater_rock_02_upper_mid_right.png",
+      "bbox_xyxy": [
+        744,
+        70,
+        850,
+        158
+      ],
+      "bbox_xywh": [
+        744,
+        70,
+        106,
+        88
+      ],
+      "anchor_px": [
+        53.0,
+        44.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse_soft",
+      "polygon": null,
+      "tags": [
+        "underwater",
+        "rock",
+        "decoration"
+      ],
+      "notes": "Semi-transparent watercolor rock/patch visible under shallow water.",
+      "asset_size_px": [
+        106,
+        88
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "underwater_rock_03_top_right",
+      "category": "underwater_rock",
+      "file": "sprites/underwater_rock_03_top_right.png",
+      "bbox_xyxy": [
+        915,
+        104,
+        1005,
+        196
+      ],
+      "bbox_xywh": [
+        915,
+        104,
+        90,
+        92
+      ],
+      "anchor_px": [
+        45.0,
+        46.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse_soft",
+      "polygon": null,
+      "tags": [
+        "underwater",
+        "rock",
+        "decoration"
+      ],
+      "notes": "Semi-transparent watercolor rock/patch visible under shallow water.",
+      "asset_size_px": [
+        90,
+        92
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "underwater_rock_04_mid_left",
+      "category": "underwater_rock",
+      "file": "sprites/underwater_rock_04_mid_left.png",
+      "bbox_xyxy": [
+        692,
+        242,
+        780,
+        335
+      ],
+      "bbox_xywh": [
+        692,
+        242,
+        88,
+        93
+      ],
+      "anchor_px": [
+        44.0,
+        46.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse_soft",
+      "polygon": null,
+      "tags": [
+        "underwater",
+        "rock",
+        "decoration"
+      ],
+      "notes": "Semi-transparent watercolor rock/patch visible under shallow water.",
+      "asset_size_px": [
+        88,
+        93
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "underwater_rock_05_mid",
+      "category": "underwater_rock",
+      "file": "sprites/underwater_rock_05_mid.png",
+      "bbox_xyxy": [
+        810,
+        216,
+        930,
+        315
+      ],
+      "bbox_xywh": [
+        810,
+        216,
+        120,
+        99
+      ],
+      "anchor_px": [
+        60.0,
+        49.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse_soft",
+      "polygon": null,
+      "tags": [
+        "underwater",
+        "rock",
+        "decoration"
+      ],
+      "notes": "Semi-transparent watercolor rock/patch visible under shallow water.",
+      "asset_size_px": [
+        120,
+        99
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "underwater_rock_06_mid_right",
+      "category": "underwater_rock",
+      "file": "sprites/underwater_rock_06_mid_right.png",
+      "bbox_xyxy": [
+        920,
+        285,
+        1012,
+        385
+      ],
+      "bbox_xywh": [
+        920,
+        285,
+        92,
+        100
+      ],
+      "anchor_px": [
+        46.0,
+        50.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse_soft",
+      "polygon": null,
+      "tags": [
+        "underwater",
+        "rock",
+        "decoration"
+      ],
+      "notes": "Semi-transparent watercolor rock/patch visible under shallow water.",
+      "asset_size_px": [
+        92,
+        100
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "underwater_rock_07_lower_mid_left",
+      "category": "underwater_rock",
+      "file": "sprites/underwater_rock_07_lower_mid_left.png",
+      "bbox_xyxy": [
+        640,
+        545,
+        730,
+        655
+      ],
+      "bbox_xywh": [
+        640,
+        545,
+        90,
+        110
+      ],
+      "anchor_px": [
+        45.0,
+        55.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse_soft",
+      "polygon": null,
+      "tags": [
+        "underwater",
+        "rock",
+        "decoration"
+      ],
+      "notes": "Semi-transparent watercolor rock/patch visible under shallow water.",
+      "asset_size_px": [
+        90,
+        110
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "underwater_rock_08_lower_mid",
+      "category": "underwater_rock",
+      "file": "sprites/underwater_rock_08_lower_mid.png",
+      "bbox_xyxy": [
+        745,
+        565,
+        838,
+        675
+      ],
+      "bbox_xywh": [
+        745,
+        565,
+        93,
+        110
+      ],
+      "anchor_px": [
+        46.5,
+        55.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse_soft",
+      "polygon": null,
+      "tags": [
+        "underwater",
+        "rock",
+        "decoration"
+      ],
+      "notes": "Semi-transparent watercolor rock/patch visible under shallow water.",
+      "asset_size_px": [
+        93,
+        110
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "underwater_rock_09_lower_right",
+      "category": "underwater_rock",
+      "file": "sprites/underwater_rock_09_lower_right.png",
+      "bbox_xyxy": [
+        830,
+        690,
+        930,
+        815
+      ],
+      "bbox_xywh": [
+        830,
+        690,
+        100,
+        125
+      ],
+      "anchor_px": [
+        50.0,
+        62.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse_soft",
+      "polygon": null,
+      "tags": [
+        "underwater",
+        "rock",
+        "decoration"
+      ],
+      "notes": "Semi-transparent watercolor rock/patch visible under shallow water.",
+      "asset_size_px": [
+        100,
+        125
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "underwater_rock_10_bottom_mid",
+      "category": "underwater_rock",
+      "file": "sprites/underwater_rock_10_bottom_mid.png",
+      "bbox_xyxy": [
+        680,
+        725,
+        785,
+        845
+      ],
+      "bbox_xywh": [
+        680,
+        725,
+        105,
+        120
+      ],
+      "anchor_px": [
+        52.5,
+        60.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse_soft",
+      "polygon": null,
+      "tags": [
+        "underwater",
+        "rock",
+        "decoration"
+      ],
+      "notes": "Semi-transparent watercolor rock/patch visible under shallow water.",
+      "asset_size_px": [
+        105,
+        120
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "underwater_rock_11_bottom_left",
+      "category": "underwater_rock",
+      "file": "sprites/underwater_rock_11_bottom_left.png",
+      "bbox_xyxy": [
+        610,
+        650,
+        700,
+        760
+      ],
+      "bbox_xywh": [
+        610,
+        650,
+        90,
+        110
+      ],
+      "anchor_px": [
+        45.0,
+        55.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse_soft",
+      "polygon": null,
+      "tags": [
+        "underwater",
+        "rock",
+        "decoration"
+      ],
+      "notes": "Semi-transparent watercolor rock/patch visible under shallow water.",
+      "asset_size_px": [
+        90,
+        110
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "underwater_rock_12_right_edge",
+      "category": "underwater_rock",
+      "file": "sprites/underwater_rock_12_right_edge.png",
+      "bbox_xyxy": [
+        960,
+        645,
+        1080,
+        775
+      ],
+      "bbox_xywh": [
+        960,
+        645,
+        120,
+        130
+      ],
+      "anchor_px": [
+        60.0,
+        65.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse_soft",
+      "polygon": null,
+      "tags": [
+        "underwater",
+        "rock",
+        "decoration"
+      ],
+      "notes": "Semi-transparent watercolor rock/patch visible under shallow water.",
+      "asset_size_px": [
+        120,
+        130
+      ],
+      "suggested_collider": {
+        "type": "none"
+      }
+    },
+    {
+      "id": "rock_01_top_peach",
+      "category": "rock",
+      "file": "sprites/rock_01_top_peach.png",
+      "bbox_xyxy": [
+        1302,
+        50,
+        1418,
+        148
+      ],
+      "bbox_xywh": [
+        1302,
+        50,
+        116,
+        98
+      ],
+      "anchor_px": [
+        58.0,
+        49.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        116,
+        98
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1302,
+          50,
+          1418,
+          148
+        ]
+      }
+    },
+    {
+      "id": "rock_02_top_white_large",
+      "category": "rock",
+      "file": "sprites/rock_02_top_white_large.png",
+      "bbox_xyxy": [
+        1205,
+        58,
+        1319,
+        160
+      ],
+      "bbox_xywh": [
+        1205,
+        58,
+        114,
+        102
+      ],
+      "anchor_px": [
+        57.0,
+        51.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        114,
+        102
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1205,
+          58,
+          1319,
+          160
+        ]
+      }
+    },
+    {
+      "id": "rock_03_top_gray_white",
+      "category": "rock",
+      "file": "sprites/rock_03_top_gray_white.png",
+      "bbox_xyxy": [
+        1112,
+        80,
+        1210,
+        178
+      ],
+      "bbox_xywh": [
+        1112,
+        80,
+        98,
+        98
+      ],
+      "anchor_px": [
+        49.0,
+        49.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        98,
+        98
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1112,
+          80,
+          1210,
+          178
+        ]
+      }
+    },
+    {
+      "id": "rock_04_upper_brown_left",
+      "category": "rock",
+      "file": "sprites/rock_04_upper_brown_left.png",
+      "bbox_xyxy": [
+        1017,
+        142,
+        1111,
+        238
+      ],
+      "bbox_xywh": [
+        1017,
+        142,
+        94,
+        96
+      ],
+      "anchor_px": [
+        47.0,
+        48.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        94,
+        96
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1017,
+          142,
+          1111,
+          238
+        ]
+      }
+    },
+    {
+      "id": "rock_05_upper_peach_right",
+      "category": "rock",
+      "file": "sprites/rock_05_upper_peach_right.png",
+      "bbox_xyxy": [
+        1248,
+        128,
+        1362,
+        247
+      ],
+      "bbox_xywh": [
+        1248,
+        128,
+        114,
+        119
+      ],
+      "anchor_px": [
+        57.0,
+        59.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        114,
+        119
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1248,
+          128,
+          1362,
+          247
+        ]
+      }
+    },
+    {
+      "id": "rock_06_upper_gray_center",
+      "category": "rock",
+      "file": "sprites/rock_06_upper_gray_center.png",
+      "bbox_xyxy": [
+        1144,
+        168,
+        1238,
+        248
+      ],
+      "bbox_xywh": [
+        1144,
+        168,
+        94,
+        80
+      ],
+      "anchor_px": [
+        47.0,
+        40.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        94,
+        80
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1144,
+          168,
+          1238,
+          248
+        ]
+      }
+    },
+    {
+      "id": "rock_07_upper_small_white",
+      "category": "rock",
+      "file": "sprites/rock_07_upper_small_white.png",
+      "bbox_xyxy": [
+        1324,
+        180,
+        1388,
+        254
+      ],
+      "bbox_xywh": [
+        1324,
+        180,
+        64,
+        74
+      ],
+      "anchor_px": [
+        32.0,
+        37.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        64,
+        74
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1324,
+          180,
+          1388,
+          254
+        ]
+      }
+    },
+    {
+      "id": "rock_08_mid_white_left",
+      "category": "rock",
+      "file": "sprites/rock_08_mid_white_left.png",
+      "bbox_xyxy": [
+        1087,
+        240,
+        1188,
+        342
+      ],
+      "bbox_xywh": [
+        1087,
+        240,
+        101,
+        102
+      ],
+      "anchor_px": [
+        50.5,
+        51.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        101,
+        102
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1087,
+          240,
+          1188,
+          342
+        ]
+      }
+    },
+    {
+      "id": "rock_09_mid_light_center",
+      "category": "rock",
+      "file": "sprites/rock_09_mid_light_center.png",
+      "bbox_xyxy": [
+        1172,
+        210,
+        1267,
+        312
+      ],
+      "bbox_xywh": [
+        1172,
+        210,
+        95,
+        102
+      ],
+      "anchor_px": [
+        47.5,
+        51.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        95,
+        102
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1172,
+          210,
+          1267,
+          312
+        ]
+      }
+    },
+    {
+      "id": "rock_10_mid_peach_right",
+      "category": "rock",
+      "file": "sprites/rock_10_mid_peach_right.png",
+      "bbox_xyxy": [
+        1291,
+        248,
+        1401,
+        356
+      ],
+      "bbox_xywh": [
+        1291,
+        248,
+        110,
+        108
+      ],
+      "anchor_px": [
+        55.0,
+        54.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        110,
+        108
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1291,
+          248,
+          1401,
+          356
+        ]
+      }
+    },
+    {
+      "id": "rock_11_mid_gray_small",
+      "category": "rock",
+      "file": "sprites/rock_11_mid_gray_small.png",
+      "bbox_xyxy": [
+        1202,
+        292,
+        1288,
+        380
+      ],
+      "bbox_xywh": [
+        1202,
+        292,
+        86,
+        88
+      ],
+      "anchor_px": [
+        43.0,
+        44.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        86,
+        88
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1202,
+          292,
+          1288,
+          380
+        ]
+      }
+    },
+    {
+      "id": "rock_12_mid_white_right_small",
+      "category": "rock",
+      "file": "sprites/rock_12_mid_white_right_small.png",
+      "bbox_xyxy": [
+        1340,
+        334,
+        1415,
+        420
+      ],
+      "bbox_xywh": [
+        1340,
+        334,
+        75,
+        86
+      ],
+      "anchor_px": [
+        37.5,
+        43.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        75,
+        86
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1340,
+          334,
+          1415,
+          420
+        ]
+      }
+    },
+    {
+      "id": "rock_13_mid_brown_left",
+      "category": "rock",
+      "file": "sprites/rock_13_mid_brown_left.png",
+      "bbox_xyxy": [
+        1035,
+        310,
+        1148,
+        432
+      ],
+      "bbox_xywh": [
+        1035,
+        310,
+        113,
+        122
+      ],
+      "anchor_px": [
+        56.5,
+        61.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        113,
+        122
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1035,
+          310,
+          1148,
+          432
+        ]
+      }
+    },
+    {
+      "id": "rock_14_mid_brown_farleft",
+      "category": "rock",
+      "file": "sprites/rock_14_mid_brown_farleft.png",
+      "bbox_xyxy": [
+        980,
+        338,
+        1076,
+        448
+      ],
+      "bbox_xywh": [
+        980,
+        338,
+        96,
+        110
+      ],
+      "anchor_px": [
+        48.0,
+        55.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        96,
+        110
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          980,
+          338,
+          1076,
+          448
+        ]
+      }
+    },
+    {
+      "id": "rock_15_mid_white_pink_left",
+      "category": "rock",
+      "file": "sprites/rock_15_mid_white_pink_left.png",
+      "bbox_xyxy": [
+        1106,
+        368,
+        1225,
+        480
+      ],
+      "bbox_xywh": [
+        1106,
+        368,
+        119,
+        112
+      ],
+      "anchor_px": [
+        59.5,
+        56.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        119,
+        112
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1106,
+          368,
+          1225,
+          480
+        ]
+      }
+    },
+    {
+      "id": "rock_16_mid_gray_center",
+      "category": "rock",
+      "file": "sprites/rock_16_mid_gray_center.png",
+      "bbox_xyxy": [
+        1190,
+        405,
+        1290,
+        510
+      ],
+      "bbox_xywh": [
+        1190,
+        405,
+        100,
+        105
+      ],
+      "anchor_px": [
+        50.0,
+        52.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        100,
+        105
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1190,
+          405,
+          1290,
+          510
+        ]
+      }
+    },
+    {
+      "id": "rock_17_mid_beige_large_right",
+      "category": "rock",
+      "file": "sprites/rock_17_mid_beige_large_right.png",
+      "bbox_xyxy": [
+        1279,
+        404,
+        1408,
+        530
+      ],
+      "bbox_xywh": [
+        1279,
+        404,
+        129,
+        126
+      ],
+      "anchor_px": [
+        64.5,
+        63.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        129,
+        126
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1279,
+          404,
+          1408,
+          530
+        ]
+      }
+    },
+    {
+      "id": "rock_18_lower_brown_left",
+      "category": "rock",
+      "file": "sprites/rock_18_lower_brown_left.png",
+      "bbox_xyxy": [
+        1004,
+        444,
+        1122,
+        558
+      ],
+      "bbox_xywh": [
+        1004,
+        444,
+        118,
+        114
+      ],
+      "anchor_px": [
+        59.0,
+        57.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        118,
+        114
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1004,
+          444,
+          1122,
+          558
+        ]
+      }
+    },
+    {
+      "id": "rock_19_lower_pink_large",
+      "category": "rock",
+      "file": "sprites/rock_19_lower_pink_large.png",
+      "bbox_xyxy": [
+        1110,
+        478,
+        1271,
+        620
+      ],
+      "bbox_xywh": [
+        1110,
+        478,
+        161,
+        142
+      ],
+      "anchor_px": [
+        80.5,
+        71.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        161,
+        142
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1110,
+          478,
+          1271,
+          620
+        ]
+      }
+    },
+    {
+      "id": "rock_20_lower_white_right",
+      "category": "rock",
+      "file": "sprites/rock_20_lower_white_right.png",
+      "bbox_xyxy": [
+        1243,
+        500,
+        1378,
+        626
+      ],
+      "bbox_xywh": [
+        1243,
+        500,
+        135,
+        126
+      ],
+      "anchor_px": [
+        67.5,
+        63.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        135,
+        126
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1243,
+          500,
+          1378,
+          626
+        ]
+      }
+    },
+    {
+      "id": "rock_21_lower_gray_left",
+      "category": "rock",
+      "file": "sprites/rock_21_lower_gray_left.png",
+      "bbox_xyxy": [
+        1043,
+        528,
+        1178,
+        658
+      ],
+      "bbox_xywh": [
+        1043,
+        528,
+        135,
+        130
+      ],
+      "anchor_px": [
+        67.5,
+        65.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        135,
+        130
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1043,
+          528,
+          1178,
+          658
+        ]
+      }
+    },
+    {
+      "id": "rock_22_lower_pink_small",
+      "category": "rock",
+      "file": "sprites/rock_22_lower_pink_small.png",
+      "bbox_xyxy": [
+        1130,
+        604,
+        1248,
+        716
+      ],
+      "bbox_xywh": [
+        1130,
+        604,
+        118,
+        112
+      ],
+      "anchor_px": [
+        59.0,
+        56.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        118,
+        112
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1130,
+          604,
+          1248,
+          716
+        ]
+      }
+    },
+    {
+      "id": "rock_23_lower_white_center_right",
+      "category": "rock",
+      "file": "sprites/rock_23_lower_white_center_right.png",
+      "bbox_xyxy": [
+        1222,
+        608,
+        1370,
+        724
+      ],
+      "bbox_xywh": [
+        1222,
+        608,
+        148,
+        116
+      ],
+      "anchor_px": [
+        74.0,
+        58.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        148,
+        116
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1222,
+          608,
+          1370,
+          724
+        ]
+      }
+    },
+    {
+      "id": "rock_24_lower_beige_edge",
+      "category": "rock",
+      "file": "sprites/rock_24_lower_beige_edge.png",
+      "bbox_xyxy": [
+        1327,
+        612,
+        1417,
+        724
+      ],
+      "bbox_xywh": [
+        1327,
+        612,
+        90,
+        112
+      ],
+      "anchor_px": [
+        45.0,
+        56.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        90,
+        112
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1327,
+          612,
+          1417,
+          724
+        ]
+      }
+    },
+    {
+      "id": "rock_25_lower_gray_far_left",
+      "category": "rock",
+      "file": "sprites/rock_25_lower_gray_far_left.png",
+      "bbox_xyxy": [
+        1001,
+        608,
+        1110,
+        730
+      ],
+      "bbox_xywh": [
+        1001,
+        608,
+        109,
+        122
+      ],
+      "anchor_px": [
+        54.5,
+        61.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        109,
+        122
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1001,
+          608,
+          1110,
+          730
+        ]
+      }
+    },
+    {
+      "id": "rock_26_bottom_gray_left",
+      "category": "rock",
+      "file": "sprites/rock_26_bottom_gray_left.png",
+      "bbox_xyxy": [
+        1058,
+        675,
+        1189,
+        790
+      ],
+      "bbox_xywh": [
+        1058,
+        675,
+        131,
+        115
+      ],
+      "anchor_px": [
+        65.5,
+        57.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        131,
+        115
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1058,
+          675,
+          1189,
+          790
+        ]
+      }
+    },
+    {
+      "id": "rock_27_bottom_white_large",
+      "category": "rock",
+      "file": "sprites/rock_27_bottom_white_large.png",
+      "bbox_xyxy": [
+        1188,
+        675,
+        1354,
+        834
+      ],
+      "bbox_xywh": [
+        1188,
+        675,
+        166,
+        159
+      ],
+      "anchor_px": [
+        83.0,
+        79.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        166,
+        159
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1188,
+          675,
+          1354,
+          834
+        ]
+      }
+    },
+    {
+      "id": "rock_28_bottom_beige_right",
+      "category": "rock",
+      "file": "sprites/rock_28_bottom_beige_right.png",
+      "bbox_xyxy": [
+        1317,
+        707,
+        1418,
+        827
+      ],
+      "bbox_xywh": [
+        1317,
+        707,
+        101,
+        120
+      ],
+      "anchor_px": [
+        50.5,
+        60.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        101,
+        120
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1317,
+          707,
+          1418,
+          827
+        ]
+      }
+    },
+    {
+      "id": "rock_29_bottom_pale_left",
+      "category": "rock",
+      "file": "sprites/rock_29_bottom_pale_left.png",
+      "bbox_xyxy": [
+        1111,
+        748,
+        1247,
+        870
+      ],
+      "bbox_xywh": [
+        1111,
+        748,
+        136,
+        122
+      ],
+      "anchor_px": [
+        68.0,
+        61.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        136,
+        122
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1111,
+          748,
+          1247,
+          870
+        ]
+      }
+    },
+    {
+      "id": "rock_30_bottom_beige_center",
+      "category": "rock",
+      "file": "sprites/rock_30_bottom_beige_center.png",
+      "bbox_xyxy": [
+        1221,
+        770,
+        1350,
+        890
+      ],
+      "bbox_xywh": [
+        1221,
+        770,
+        129,
+        120
+      ],
+      "anchor_px": [
+        64.5,
+        60.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        129,
+        120
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1221,
+          770,
+          1350,
+          890
+        ]
+      }
+    },
+    {
+      "id": "rock_31_bottom_white_far_left",
+      "category": "rock",
+      "file": "sprites/rock_31_bottom_white_far_left.png",
+      "bbox_xyxy": [
+        1034,
+        775,
+        1145,
+        892
+      ],
+      "bbox_xywh": [
+        1034,
+        775,
+        111,
+        117
+      ],
+      "anchor_px": [
+        55.5,
+        58.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        111,
+        117
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1034,
+          775,
+          1145,
+          892
+        ]
+      }
+    },
+    {
+      "id": "rock_32_top_tiny_gray",
+      "category": "rock",
+      "file": "sprites/rock_32_top_tiny_gray.png",
+      "bbox_xyxy": [
+        1262,
+        54,
+        1320,
+        104
+      ],
+      "bbox_xywh": [
+        1262,
+        54,
+        58,
+        50
+      ],
+      "anchor_px": [
+        29.0,
+        25.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        58,
+        50
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1262,
+          54,
+          1320,
+          104
+        ]
+      }
+    },
+    {
+      "id": "rock_33_upper_light_round",
+      "category": "rock",
+      "file": "sprites/rock_33_upper_light_round.png",
+      "bbox_xyxy": [
+        1180,
+        248,
+        1242,
+        320
+      ],
+      "bbox_xywh": [
+        1180,
+        248,
+        62,
+        72
+      ],
+      "anchor_px": [
+        31.0,
+        36.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        62,
+        72
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1180,
+          248,
+          1242,
+          320
+        ]
+      }
+    },
+    {
+      "id": "rock_34_upper_round_center",
+      "category": "rock",
+      "file": "sprites/rock_34_upper_round_center.png",
+      "bbox_xyxy": [
+        1227,
+        331,
+        1295,
+        405
+      ],
+      "bbox_xywh": [
+        1227,
+        331,
+        68,
+        74
+      ],
+      "anchor_px": [
+        34.0,
+        37.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        68,
+        74
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1227,
+          331,
+          1295,
+          405
+        ]
+      }
+    },
+    {
+      "id": "rock_35_right_mid_gray",
+      "category": "rock",
+      "file": "sprites/rock_35_right_mid_gray.png",
+      "bbox_xyxy": [
+        1354,
+        457,
+        1420,
+        561
+      ],
+      "bbox_xywh": [
+        1354,
+        457,
+        66,
+        104
+      ],
+      "anchor_px": [
+        33.0,
+        52.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        66,
+        104
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1354,
+          457,
+          1420,
+          561
+        ]
+      }
+    },
+    {
+      "id": "rock_36_bottom_small_white",
+      "category": "rock",
+      "file": "sprites/rock_36_bottom_small_white.png",
+      "bbox_xyxy": [
+        1082,
+        720,
+        1164,
+        812
+      ],
+      "bbox_xywh": [
+        1082,
+        720,
+        82,
+        92
+      ],
+      "anchor_px": [
+        41.0,
+        46.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        82,
+        92
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1082,
+          720,
+          1164,
+          812
+        ]
+      }
+    },
+    {
+      "id": "rock_37_bottom_small_pink",
+      "category": "rock",
+      "file": "sprites/rock_37_bottom_small_pink.png",
+      "bbox_xyxy": [
+        1158,
+        716,
+        1248,
+        792
+      ],
+      "bbox_xywh": [
+        1158,
+        716,
+        90,
+        76
+      ],
+      "anchor_px": [
+        45.0,
+        38.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        90,
+        76
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1158,
+          716,
+          1248,
+          792
+        ]
+      }
+    },
+    {
+      "id": "rock_38_bottom_edge_white",
+      "category": "rock",
+      "file": "sprites/rock_38_bottom_edge_white.png",
+      "bbox_xyxy": [
+        1072,
+        818,
+        1165,
+        894
+      ],
+      "bbox_xywh": [
+        1072,
+        818,
+        93,
+        76
+      ],
+      "anchor_px": [
+        46.5,
+        38.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        93,
+        76
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1072,
+          818,
+          1165,
+          894
+        ]
+      }
+    },
+    {
+      "id": "rock_39_mid_gray_pebble",
+      "category": "rock",
+      "file": "sprites/rock_39_mid_gray_pebble.png",
+      "bbox_xyxy": [
+        1128,
+        300,
+        1190,
+        364
+      ],
+      "bbox_xywh": [
+        1128,
+        300,
+        62,
+        64
+      ],
+      "anchor_px": [
+        31.0,
+        32.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        62,
+        64
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1128,
+          300,
+          1190,
+          364
+        ]
+      }
+    },
+    {
+      "id": "rock_40_mid_pink_pebble",
+      "category": "rock",
+      "file": "sprites/rock_40_mid_pink_pebble.png",
+      "bbox_xyxy": [
+        1160,
+        333,
+        1231,
+        410
+      ],
+      "bbox_xywh": [
+        1160,
+        333,
+        71,
+        77
+      ],
+      "anchor_px": [
+        35.5,
+        38.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        71,
+        77
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1160,
+          333,
+          1231,
+          410
+        ]
+      }
+    },
+    {
+      "id": "rock_41_lower_left_small_brown",
+      "category": "rock",
+      "file": "sprites/rock_41_lower_left_small_brown.png",
+      "bbox_xyxy": [
+        965,
+        520,
+        1060,
+        620
+      ],
+      "bbox_xywh": [
+        965,
+        520,
+        95,
+        100
+      ],
+      "anchor_px": [
+        47.5,
+        50.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        95,
+        100
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          965,
+          520,
+          1060,
+          620
+        ]
+      }
+    },
+    {
+      "id": "rock_42_upper_left_small_brown",
+      "category": "rock",
+      "file": "sprites/rock_42_upper_left_small_brown.png",
+      "bbox_xyxy": [
+        972,
+        220,
+        1060,
+        312
+      ],
+      "bbox_xywh": [
+        972,
+        220,
+        88,
+        92
+      ],
+      "anchor_px": [
+        44.0,
+        46.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        88,
+        92
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          972,
+          220,
+          1060,
+          312
+        ]
+      }
+    },
+    {
+      "id": "rock_43_center_greenish_shallow",
+      "category": "rock",
+      "file": "sprites/rock_43_center_greenish_shallow.png",
+      "bbox_xyxy": [
+        925,
+        365,
+        1022,
+        470
+      ],
+      "bbox_xywh": [
+        925,
+        365,
+        97,
+        105
+      ],
+      "anchor_px": [
+        48.5,
+        52.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        97,
+        105
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          925,
+          365,
+          1022,
+          470
+        ]
+      }
+    },
+    {
+      "id": "rock_44_lower_center_brown",
+      "category": "rock",
+      "file": "sprites/rock_44_lower_center_brown.png",
+      "bbox_xyxy": [
+        945,
+        720,
+        1054,
+        850
+      ],
+      "bbox_xywh": [
+        945,
+        720,
+        109,
+        130
+      ],
+      "anchor_px": [
+        54.5,
+        65.0
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        109,
+        130
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          945,
+          720,
+          1054,
+          850
+        ]
+      }
+    },
+    {
+      "id": "rock_45_top_water_edge_brown",
+      "category": "rock",
+      "file": "sprites/rock_45_top_water_edge_brown.png",
+      "bbox_xyxy": [
+        1006,
+        70,
+        1110,
+        145
+      ],
+      "bbox_xywh": [
+        1006,
+        70,
+        104,
+        75
+      ],
+      "anchor_px": [
+        52.0,
+        37.5
+      ],
+      "anchor_norm": [
+        0.5,
+        0.5
+      ],
+      "mask": "ellipse",
+      "polygon": null,
+      "tags": [
+        "rock",
+        "obstacle",
+        "decoration"
+      ],
+      "notes": "",
+      "asset_size_px": [
+        104,
+        75
+      ],
+      "suggested_collider": {
+        "type": "ellipse",
+        "bbox_xyxy": [
+          1006,
+          70,
+          1110,
+          145
+        ]
+      }
+    }
+  ]
+}

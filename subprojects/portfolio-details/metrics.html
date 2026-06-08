@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>度量 3.0 · 赵东阳</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css?v=20260519-1" />
+  </head>
+  <body>
+    <div class="case-layout">
+      <nav class="case-nav" aria-label="章节导航">
+        <ul class="case-nav__links">
+          <li><a href="#overview">项目背景</a></li>
+          <li><a href="#problem">问题定义</a></li>
+          <li><a href="#explore">主题探索</a></li>
+          <li><a href="#validate">颜色验证</a></li>
+          <li><a href="#solution">工程落地</a></li>
+          <li><a href="#results">结果复用</a></li>
+        </ul>
+        <p class="case-nav__meta">Meegle 度量模块<br />BI · 数据可视化</p>
+      </nav>
+
+      <main class="case-main">
+        <header class="case-hero">
+          <p class="case-hero__eyebrow">Case 02 / Data Visualization</p>
+          <h1 class="case-hero__title">让数据洞察，配得上管理层的汇报场景。</h1>
+          <p class="case-hero__subtitle">
+            度量 3.0：从「能看数据」到专业仪表盘——主题色体系、可验证的色彩方法与工程化 Token。
+          </p>
+          <dl class="case-hero__meta">
+            <div>
+              <dt>角色</dt>
+              <dd>图表体验 / 视图体验 / 主题与 Token（独立负责）</dd>
+            </div>
+            <div>
+              <dt>交付</dt>
+              <dd>9 套官方主题、全屏模式、数据色 Token</dd>
+            </div>
+            <div>
+              <dt>产品</dt>
+              <dd>飞书项目 Meegle · Metrics</dd>
+            </div>
+          </dl>
+        </header>
+
+        <section class="case-section" id="overview">
+          <p class="case-section__label">项目背景</p>
+          <h2 class="case-section__title">度量是 Meegle 的 BI 与数据洞察能力。</h2>
+          <p class="case-section__lead">
+            它帮助企业在项目执行中查看效率、质量、风险与产出。当客户行业增多，度量页开始承担月度汇报、季度复盘和管理层展示，用户对图表专业感、主题差异和沉浸展示的要求明显提高。
+          </p>
+          <figure class="figure figure--wide">
+            <img src="public/images/metrics/hero.png" alt="度量 3.0 概览" loading="lazy" />
+          </figure>
+        </section>
+
+        <section class="case-section" id="problem">
+          <p class="case-section__label">问题定义</p>
+          <h2 class="case-section__title">分散反馈背后，是三类专业问题。</h2>
+          <p class="case-section__lead">
+            用户反馈看起来很分散：有人希望图表更丰富，有人觉得配置复杂，也有人需要更适合汇报的展示效果。归纳后，核心问题集中在表达能力、使用门槛和视觉品牌感。
+          </p>
+          <figure class="figure figure--wide">
+            <img src="public/images/metrics/research.png" alt="需求挖掘与用户反馈归纳" loading="lazy" />
+          </figure>
+          <div class="insight-grid">
+            <article class="insight-card">
+              <h4>表达能力</h4>
+              <p>原有图表类型和视图能力难以覆盖更多行业与汇报场景。</p>
+            </article>
+            <article class="insight-card">
+              <h4>使用门槛</h4>
+              <p>配置项多，用户需要花较长时间才能做出可用图表。</p>
+            </article>
+            <article class="insight-card">
+              <h4>视觉品牌</h4>
+              <p>默认样式不够精致，也缺少能匹配行业气质的官方主题。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="case-section" id="explore">
+          <p class="case-section__label">主题探索</p>
+          <h2 class="case-section__title">主题探索：美观、差异、可读，三者兼得。</h2>
+          <p class="case-section__lead">
+            主题不是简单换皮。它需要提升默认美观度，保留颜色与描边等必要自定义，同时让科技、制造、能源、地产、环保等客户都能找到匹配自身气质的表达方式。
+          </p>
+          <figure class="figure figure--wide">
+            <img src="public/images/metrics/themes-explore.png" alt="主题探索与行业色板" loading="lazy" />
+          </figure>
+        </section>
+
+        <div class="band">
+          <section class="case-section" id="validate">
+            <p class="case-section__label">颜色验证</p>
+            <h2 class="case-section__title">颜色从「好不好看」变成可验证的系统。</h2>
+            <p class="case-section__lead">
+              我用 Chroma 控制颜色是否过灰或过饱和，用 Lightness 保证色块区分和文字可读，用 Hue 让每套主题集中在 2–3 个主色相扇区，形成明确的行业气质。
+            </p>
+            <div class="figure-row">
+              <figure class="figure">
+                <img src="public/images/metrics/chroma.png" alt="Chroma 明度 色相分析" loading="lazy" />
+                <figcaption>Chroma · Lightness · Hue</figcaption>
+              </figure>
+              <figure class="figure">
+                <img src="public/images/metrics/contrast.png" alt="对比度与色盲测试" loading="lazy" />
+                <figcaption>对比度 · 色觉差异</figcaption>
+              </figure>
+            </div>
+          </section>
+        </div>
+
+        <section class="case-section" id="solution">
+          <p class="case-section__label">工程落地</p>
+          <h2 class="case-section__title">数据色 Token：一键切换，设计与研发同源。</h2>
+          <p class="case-section__lead">
+            主题验证完成后，颜色需要进入 Token 才能稳定落地。cat1、cat2、cat3 等语义数据色被图表组件统一调用，切换主题时折线、柱状、饼图和雷达图同步更新。
+          </p>
+          <figure class="figure figure--wide">
+            <img src="public/images/metrics/token.png" alt="度量主题 Token" loading="lazy" />
+          </figure>
+          <figure class="figure figure--wide">
+            <img src="public/images/metrics/before-after.png" alt="度量页面改版前后" loading="lazy" />
+            <figcaption>重新组织卡片比例、图表间距、标题层级和辅助信息，让页面更接近专业仪表盘</figcaption>
+          </figure>
+          <figure class="figure figure--wide">
+            <img src="public/images/metrics/multi-theme.png" alt="多主题跨行业展示" loading="lazy" />
+            <figcaption>同一套内容可以根据团队品牌、行业气质和汇报场景切换不同主题</figcaption>
+          </figure>
+        </section>
+
+        <section class="case-section" id="results">
+          <p class="case-section__label">结果复用</p>
+          <h2 class="case-section__title">问题解决、使用数据、方法复用。</h2>
+          <ul class="reflection-list">
+            <li>
+              <h4>50+ 图表体验问题闭环</h4>
+              <p>覆盖图表类型、显示效果、主题能力和展示体验。</p>
+            </li>
+            <li>
+              <h4>非默认主题选择占比约 25%</h4>
+              <p>说明用户确实存在主题切换和风格适配需求。</p>
+            </li>
+            <li>
+              <h4>方法复用到轻应用等模块</h4>
+              <p>行业分析、取色、Chroma / 明度 / 对比度验证和 Token 定义，沉淀为可复用的数据色设计流程。</p>
+            </li>
+          </ul>
+          <figure class="figure figure--wide">
+            <img src="public/images/metrics/results.png" alt="项目复盘" loading="lazy" />
+          </figure>
+        </section>
+
+        <footer class="case-footer">
+          <p class="case-footer__label">全部案例</p>
+          <div class="case-footer__links">
+            <a href="metrics.html">度量 3.0</a>
+            <span>·</span>
+            <a href="gantt.html">树形甘特</a>
+            <span>·</span>
+            <a href="rebranding.html?v=3">UI Rebranding</a>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

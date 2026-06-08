@@ -1,0 +1,516 @@
+{
+  "image": "../spritesheet.png",
+  "frames": {
+    "duck_01_top": {
+      "x": 8,
+      "y": 8,
+      "w": 53,
+      "h": 85,
+      "file": "sprites/duck_01_top.png"
+    },
+    "duck_02_mid": {
+      "x": 69,
+      "y": 8,
+      "w": 52,
+      "h": 84,
+      "file": "sprites/duck_02_mid.png"
+    },
+    "duck_03_lower_left": {
+      "x": 129,
+      "y": 8,
+      "w": 58,
+      "h": 90,
+      "file": "sprites/duck_03_lower_left.png"
+    },
+    "duck_04_lower_right": {
+      "x": 195,
+      "y": 8,
+      "w": 56,
+      "h": 92,
+      "file": "sprites/duck_04_lower_right.png"
+    },
+    "person_01_on_dock": {
+      "x": 259,
+      "y": 8,
+      "w": 77,
+      "h": 65,
+      "file": "sprites/person_01_on_dock.png"
+    },
+    "reeds_01_top_left": {
+      "x": 344,
+      "y": 8,
+      "w": 103,
+      "h": 142,
+      "file": "sprites/reeds_01_top_left.png"
+    },
+    "reeds_02_left_mid": {
+      "x": 455,
+      "y": 8,
+      "w": 61,
+      "h": 110,
+      "file": "sprites/reeds_02_left_mid.png"
+    },
+    "reeds_03_left_bottom": {
+      "x": 524,
+      "y": 8,
+      "w": 97,
+      "h": 170,
+      "file": "sprites/reeds_03_left_bottom.png"
+    },
+    "reeds_04_bottom_left": {
+      "x": 629,
+      "y": 8,
+      "w": 145,
+      "h": 117,
+      "file": "sprites/reeds_04_bottom_left.png"
+    },
+    "reeds_05_bottom_center": {
+      "x": 782,
+      "y": 8,
+      "w": 82,
+      "h": 110,
+      "file": "sprites/reeds_05_bottom_center.png"
+    },
+    "sparkles_01_upper_left": {
+      "x": 872,
+      "y": 8,
+      "w": 65,
+      "h": 45,
+      "file": "sprites/sparkles_01_upper_left.png"
+    },
+    "sparkles_02_left_mid": {
+      "x": 945,
+      "y": 8,
+      "w": 115,
+      "h": 45,
+      "file": "sprites/sparkles_02_left_mid.png"
+    },
+    "sparkles_03_center": {
+      "x": 1068,
+      "y": 8,
+      "w": 57,
+      "h": 47,
+      "file": "sprites/sparkles_03_center.png"
+    },
+    "sparkles_04_bottom_left": {
+      "x": 1133,
+      "y": 8,
+      "w": 80,
+      "h": 42,
+      "file": "sprites/sparkles_04_bottom_left.png"
+    },
+    "sparkles_05_mid_bottom": {
+      "x": 1221,
+      "y": 8,
+      "w": 80,
+      "h": 45,
+      "file": "sprites/sparkles_05_mid_bottom.png"
+    },
+    "sparkles_06_duck_zone": {
+      "x": 1309,
+      "y": 8,
+      "w": 120,
+      "h": 120,
+      "file": "sprites/sparkles_06_duck_zone.png"
+    },
+    "underwater_rock_01_upper_mid": {
+      "x": 1437,
+      "y": 8,
+      "w": 110,
+      "h": 87,
+      "file": "sprites/underwater_rock_01_upper_mid.png"
+    },
+    "underwater_rock_02_upper_mid_right": {
+      "x": 1555,
+      "y": 8,
+      "w": 106,
+      "h": 88,
+      "file": "sprites/underwater_rock_02_upper_mid_right.png"
+    },
+    "underwater_rock_03_top_right": {
+      "x": 1669,
+      "y": 8,
+      "w": 90,
+      "h": 92,
+      "file": "sprites/underwater_rock_03_top_right.png"
+    },
+    "underwater_rock_04_mid_left": {
+      "x": 1767,
+      "y": 8,
+      "w": 88,
+      "h": 93,
+      "file": "sprites/underwater_rock_04_mid_left.png"
+    },
+    "underwater_rock_05_mid": {
+      "x": 1863,
+      "y": 8,
+      "w": 120,
+      "h": 99,
+      "file": "sprites/underwater_rock_05_mid.png"
+    },
+    "underwater_rock_06_mid_right": {
+      "x": 8,
+      "y": 186,
+      "w": 92,
+      "h": 100,
+      "file": "sprites/underwater_rock_06_mid_right.png"
+    },
+    "underwater_rock_07_lower_mid_left": {
+      "x": 108,
+      "y": 186,
+      "w": 90,
+      "h": 110,
+      "file": "sprites/underwater_rock_07_lower_mid_left.png"
+    },
+    "underwater_rock_08_lower_mid": {
+      "x": 206,
+      "y": 186,
+      "w": 93,
+      "h": 110,
+      "file": "sprites/underwater_rock_08_lower_mid.png"
+    },
+    "underwater_rock_09_lower_right": {
+      "x": 307,
+      "y": 186,
+      "w": 100,
+      "h": 125,
+      "file": "sprites/underwater_rock_09_lower_right.png"
+    },
+    "underwater_rock_10_bottom_mid": {
+      "x": 415,
+      "y": 186,
+      "w": 105,
+      "h": 120,
+      "file": "sprites/underwater_rock_10_bottom_mid.png"
+    },
+    "underwater_rock_11_bottom_left": {
+      "x": 528,
+      "y": 186,
+      "w": 90,
+      "h": 110,
+      "file": "sprites/underwater_rock_11_bottom_left.png"
+    },
+    "underwater_rock_12_right_edge": {
+      "x": 626,
+      "y": 186,
+      "w": 120,
+      "h": 130,
+      "file": "sprites/underwater_rock_12_right_edge.png"
+    },
+    "rock_01_top_peach": {
+      "x": 754,
+      "y": 186,
+      "w": 116,
+      "h": 98,
+      "file": "sprites/rock_01_top_peach.png"
+    },
+    "rock_02_top_white_large": {
+      "x": 878,
+      "y": 186,
+      "w": 114,
+      "h": 102,
+      "file": "sprites/rock_02_top_white_large.png"
+    },
+    "rock_03_top_gray_white": {
+      "x": 1000,
+      "y": 186,
+      "w": 98,
+      "h": 98,
+      "file": "sprites/rock_03_top_gray_white.png"
+    },
+    "rock_04_upper_brown_left": {
+      "x": 1106,
+      "y": 186,
+      "w": 94,
+      "h": 96,
+      "file": "sprites/rock_04_upper_brown_left.png"
+    },
+    "rock_05_upper_peach_right": {
+      "x": 1208,
+      "y": 186,
+      "w": 114,
+      "h": 119,
+      "file": "sprites/rock_05_upper_peach_right.png"
+    },
+    "rock_06_upper_gray_center": {
+      "x": 1330,
+      "y": 186,
+      "w": 94,
+      "h": 80,
+      "file": "sprites/rock_06_upper_gray_center.png"
+    },
+    "rock_07_upper_small_white": {
+      "x": 1432,
+      "y": 186,
+      "w": 64,
+      "h": 74,
+      "file": "sprites/rock_07_upper_small_white.png"
+    },
+    "rock_08_mid_white_left": {
+      "x": 1504,
+      "y": 186,
+      "w": 101,
+      "h": 102,
+      "file": "sprites/rock_08_mid_white_left.png"
+    },
+    "rock_09_mid_light_center": {
+      "x": 1613,
+      "y": 186,
+      "w": 95,
+      "h": 102,
+      "file": "sprites/rock_09_mid_light_center.png"
+    },
+    "rock_10_mid_peach_right": {
+      "x": 1716,
+      "y": 186,
+      "w": 110,
+      "h": 108,
+      "file": "sprites/rock_10_mid_peach_right.png"
+    },
+    "rock_11_mid_gray_small": {
+      "x": 1834,
+      "y": 186,
+      "w": 86,
+      "h": 88,
+      "file": "sprites/rock_11_mid_gray_small.png"
+    },
+    "rock_12_mid_white_right_small": {
+      "x": 1928,
+      "y": 186,
+      "w": 75,
+      "h": 86,
+      "file": "sprites/rock_12_mid_white_right_small.png"
+    },
+    "rock_13_mid_brown_left": {
+      "x": 8,
+      "y": 324,
+      "w": 113,
+      "h": 122,
+      "file": "sprites/rock_13_mid_brown_left.png"
+    },
+    "rock_14_mid_brown_farleft": {
+      "x": 129,
+      "y": 324,
+      "w": 96,
+      "h": 110,
+      "file": "sprites/rock_14_mid_brown_farleft.png"
+    },
+    "rock_15_mid_white_pink_left": {
+      "x": 233,
+      "y": 324,
+      "w": 119,
+      "h": 112,
+      "file": "sprites/rock_15_mid_white_pink_left.png"
+    },
+    "rock_16_mid_gray_center": {
+      "x": 360,
+      "y": 324,
+      "w": 100,
+      "h": 105,
+      "file": "sprites/rock_16_mid_gray_center.png"
+    },
+    "rock_17_mid_beige_large_right": {
+      "x": 468,
+      "y": 324,
+      "w": 129,
+      "h": 126,
+      "file": "sprites/rock_17_mid_beige_large_right.png"
+    },
+    "rock_18_lower_brown_left": {
+      "x": 605,
+      "y": 324,
+      "w": 118,
+      "h": 114,
+      "file": "sprites/rock_18_lower_brown_left.png"
+    },
+    "rock_19_lower_pink_large": {
+      "x": 731,
+      "y": 324,
+      "w": 161,
+      "h": 142,
+      "file": "sprites/rock_19_lower_pink_large.png"
+    },
+    "rock_20_lower_white_right": {
+      "x": 900,
+      "y": 324,
+      "w": 135,
+      "h": 126,
+      "file": "sprites/rock_20_lower_white_right.png"
+    },
+    "rock_21_lower_gray_left": {
+      "x": 1043,
+      "y": 324,
+      "w": 135,
+      "h": 130,
+      "file": "sprites/rock_21_lower_gray_left.png"
+    },
+    "rock_22_lower_pink_small": {
+      "x": 1186,
+      "y": 324,
+      "w": 118,
+      "h": 112,
+      "file": "sprites/rock_22_lower_pink_small.png"
+    },
+    "rock_23_lower_white_center_right": {
+      "x": 1312,
+      "y": 324,
+      "w": 148,
+      "h": 116,
+      "file": "sprites/rock_23_lower_white_center_right.png"
+    },
+    "rock_24_lower_beige_edge": {
+      "x": 1468,
+      "y": 324,
+      "w": 90,
+      "h": 112,
+      "file": "sprites/rock_24_lower_beige_edge.png"
+    },
+    "rock_25_lower_gray_far_left": {
+      "x": 1566,
+      "y": 324,
+      "w": 109,
+      "h": 122,
+      "file": "sprites/rock_25_lower_gray_far_left.png"
+    },
+    "rock_26_bottom_gray_left": {
+      "x": 1683,
+      "y": 324,
+      "w": 131,
+      "h": 115,
+      "file": "sprites/rock_26_bottom_gray_left.png"
+    },
+    "rock_27_bottom_white_large": {
+      "x": 1822,
+      "y": 324,
+      "w": 166,
+      "h": 159,
+      "file": "sprites/rock_27_bottom_white_large.png"
+    },
+    "rock_28_bottom_beige_right": {
+      "x": 8,
+      "y": 491,
+      "w": 101,
+      "h": 120,
+      "file": "sprites/rock_28_bottom_beige_right.png"
+    },
+    "rock_29_bottom_pale_left": {
+      "x": 117,
+      "y": 491,
+      "w": 136,
+      "h": 122,
+      "file": "sprites/rock_29_bottom_pale_left.png"
+    },
+    "rock_30_bottom_beige_center": {
+      "x": 261,
+      "y": 491,
+      "w": 129,
+      "h": 120,
+      "file": "sprites/rock_30_bottom_beige_center.png"
+    },
+    "rock_31_bottom_white_far_left": {
+      "x": 398,
+      "y": 491,
+      "w": 111,
+      "h": 117,
+      "file": "sprites/rock_31_bottom_white_far_left.png"
+    },
+    "rock_32_top_tiny_gray": {
+      "x": 517,
+      "y": 491,
+      "w": 58,
+      "h": 50,
+      "file": "sprites/rock_32_top_tiny_gray.png"
+    },
+    "rock_33_upper_light_round": {
+      "x": 583,
+      "y": 491,
+      "w": 62,
+      "h": 72,
+      "file": "sprites/rock_33_upper_light_round.png"
+    },
+    "rock_34_upper_round_center": {
+      "x": 653,
+      "y": 491,
+      "w": 68,
+      "h": 74,
+      "file": "sprites/rock_34_upper_round_center.png"
+    },
+    "rock_35_right_mid_gray": {
+      "x": 729,
+      "y": 491,
+      "w": 66,
+      "h": 104,
+      "file": "sprites/rock_35_right_mid_gray.png"
+    },
+    "rock_36_bottom_small_white": {
+      "x": 803,
+      "y": 491,
+      "w": 82,
+      "h": 92,
+      "file": "sprites/rock_36_bottom_small_white.png"
+    },
+    "rock_37_bottom_small_pink": {
+      "x": 893,
+      "y": 491,
+      "w": 90,
+      "h": 76,
+      "file": "sprites/rock_37_bottom_small_pink.png"
+    },
+    "rock_38_bottom_edge_white": {
+      "x": 991,
+      "y": 491,
+      "w": 93,
+      "h": 76,
+      "file": "sprites/rock_38_bottom_edge_white.png"
+    },
+    "rock_39_mid_gray_pebble": {
+      "x": 1092,
+      "y": 491,
+      "w": 62,
+      "h": 64,
+      "file": "sprites/rock_39_mid_gray_pebble.png"
+    },
+    "rock_40_mid_pink_pebble": {
+      "x": 1162,
+      "y": 491,
+      "w": 71,
+      "h": 77,
+      "file": "sprites/rock_40_mid_pink_pebble.png"
+    },
+    "rock_41_lower_left_small_brown": {
+      "x": 1241,
+      "y": 491,
+      "w": 95,
+      "h": 100,
+      "file": "sprites/rock_41_lower_left_small_brown.png"
+    },
+    "rock_42_upper_left_small_brown": {
+      "x": 1344,
+      "y": 491,
+      "w": 88,
+      "h": 92,
+      "file": "sprites/rock_42_upper_left_small_brown.png"
+    },
+    "rock_43_center_greenish_shallow": {
+      "x": 1440,
+      "y": 491,
+      "w": 97,
+      "h": 105,
+      "file": "sprites/rock_43_center_greenish_shallow.png"
+    },
+    "rock_44_lower_center_brown": {
+      "x": 1545,
+      "y": 491,
+      "w": 109,
+      "h": 130,
+      "file": "sprites/rock_44_lower_center_brown.png"
+    },
+    "rock_45_top_water_edge_brown": {
+      "x": 1662,
+      "y": 491,
+      "w": 104,
+      "h": 75,
+      "file": "sprites/rock_45_top_water_edge_brown.png"
+    }
+  }
+}
