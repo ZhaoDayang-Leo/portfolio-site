@@ -58,8 +58,6 @@ export default function CoverFlow() {
   const featuredIndexRef = useRef<number | null>(null)
   const hasUserInteractedRef = useRef(false)
   const playbackWantedRef = useRef(false)
-  const wheelVelocityRef = useRef(0)
-  const wheelInertiaRafRef = useRef<number | null>(null)
   const [selectedIndex, setSelectedIndex] = useState(INITIAL_INDEX)
   const [featuredIndex, setFeaturedIndex] = useState<number | null>(null)
   const [lyrics, setLyrics] = useState<LyricLine[]>([])
@@ -165,38 +163,6 @@ export default function CoverFlow() {
     handVelocityRef.current = 0
   }, [])
 
-  const stopWheelInertia = useCallback(() => {
-    if (wheelInertiaRafRef.current !== null) {
-      window.cancelAnimationFrame(wheelInertiaRafRef.current)
-      wheelInertiaRafRef.current = null
-    }
-    wheelVelocityRef.current = 0
-  }, [])
-
-  const startWheelInertia = useCallback(() => {
-    if (wheelInertiaRafRef.current !== null || featuredIndexRef.current !== null) return
-
-    const tick = () => {
-      const container = containerRef.current
-      if (!container || featuredIndexRef.current !== null) {
-        stopWheelInertia()
-        return
-      }
-
-      wheelVelocityRef.current *= 0.9
-      if (Math.abs(wheelVelocityRef.current) < 0.28) {
-        stopWheelInertia()
-        return
-      }
-
-      container.scrollLeft += wheelVelocityRef.current
-      update3D()
-      wheelInertiaRafRef.current = window.requestAnimationFrame(tick)
-    }
-
-    wheelInertiaRafRef.current = window.requestAnimationFrame(tick)
-  }, [stopWheelInertia, update3D])
-
   const startHandInertia = useCallback(() => {
     if (handInertiaRafRef.current !== null || featuredIndexRef.current !== null) return
 
@@ -264,7 +230,6 @@ export default function CoverFlow() {
     const onMouseDown = (e: MouseEvent) => {
       if (featuredIndexRef.current !== null) return
       stopHandInertia()
-      stopWheelInertia()
       isDown = true
       didDragRef.current = false
       hasUserInteractedRef.current = true
@@ -293,27 +258,10 @@ export default function CoverFlow() {
       scheduleUpdate()
     }
 
-    const onWheel = (e: WheelEvent) => {
-      if (featuredIndexRef.current !== null) return
-      const primaryDelta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY
-      if (Math.abs(primaryDelta) < 0.5) return
-      e.preventDefault()
-      hasUserInteractedRef.current = true
-      stopHandInertia()
-      stopWheelInertia()
-      const modeScale = e.deltaMode === WheelEvent.DOM_DELTA_LINE ? 18 : e.deltaMode === WheelEvent.DOM_DELTA_PAGE ? container.clientWidth : 1
-      const nextDelta = primaryDelta * modeScale
-      container.scrollLeft += nextDelta
-      wheelVelocityRef.current = nextDelta
-      scheduleUpdate()
-      window.setTimeout(startWheelInertia, 40)
-    }
-
     container.addEventListener('mousedown', onMouseDown)
     container.addEventListener('mouseleave', onMouseLeave)
     container.addEventListener('mouseup', onMouseUp)
     container.addEventListener('mousemove', onMouseMove)
-    container.addEventListener('wheel', onWheel, { passive: false })
 
     return () => {
       window.clearTimeout(initTimer)
@@ -338,16 +286,14 @@ export default function CoverFlow() {
         programmaticSelectionTimerRef.current = null
       }
       stopHandInertia()
-      stopWheelInertia()
       container.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onResize)
       container.removeEventListener('mousedown', onMouseDown)
       container.removeEventListener('mouseleave', onMouseLeave)
       container.removeEventListener('mouseup', onMouseUp)
       container.removeEventListener('mousemove', onMouseMove)
-      container.removeEventListener('wheel', onWheel)
     }
-  }, [startWheelInertia, stopHandInertia, stopWheelInertia, update3D])
+  }, [stopHandInertia, update3D])
 
   const centerAlbum = useCallback((index: number) => {
     if (didDragRef.current) {

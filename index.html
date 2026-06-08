@@ -619,7 +619,7 @@
     .mini-book,.reading-meta h3{transition-timing-function:var(--emil-ease-out)}
     .stars span{transition:transform var(--emil-press) var(--emil-ease-out),background var(--emil-hover) var(--emil-ease),filter var(--emil-hover) var(--emil-ease)}
     .lang-toggle:active,.top-music-pill:active,.top-nav .top-music-control:active,.top-nav .top-music-skip:active,.pill-btn:active,.bottom-nav button:active,.external-preview-actions button:active,.filter-btn:active,.place-pin:active,.chips.specimen-card .tag-pill:active,.stars span:active{scale:.97;transition-duration:var(--emil-press)}
-    .portfolio-footer{position:relative;z-index:5;display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,23vw);grid-template-areas:"copy card" "copy meta";column-gap:clamp(56px,9vw,180px);row-gap:24px;align-items:center;height:clamp(570px,72svh,760px);padding:58px clamp(24px,5.25vw,108px) 72px;background:#090b0d;color:#f7f4ee;border-top:1px solid rgba(247,244,238,.08);overflow:hidden}
+    .portfolio-footer{position:relative;z-index:260;display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,23vw);grid-template-areas:"copy card" "copy meta";column-gap:clamp(56px,9vw,180px);row-gap:24px;align-items:center;height:clamp(570px,72svh,760px);margin-top:-120px;padding:58px clamp(24px,5.25vw,108px) 72px;background:#090b0d;color:#f7f4ee;border-top:1px solid rgba(247,244,238,.08);overflow:hidden}
     .footer-copy{grid-area:copy;position:relative;z-index:1;align-self:center}
     .footer-meta{grid-area:meta;position:relative;z-index:1;align-self:start}
     .footer-wechat-card{grid-area:card;position:relative;z-index:1;justify-self:center}
@@ -2099,7 +2099,7 @@
     function updateTime(){const el=document.getElementById("local-time");const ampm=document.getElementById("time-ampm");if(!el||!ampm)return;const parts=new Intl.DateTimeFormat(currentLang==="en"?"en-US":"zh-CN",{timeZone:"Asia/Shanghai",hour12:true,hour:"2-digit",minute:"2-digit",second:"2-digit"}).formatToParts(new Date());const time=["hour","minute","second"].map(t=>parts.find(p=>p.type===t)?.value||"00").join(":");const dayPeriod=parts.find(p=>p.type==="dayPeriod")?.value||"";el.childNodes[0].nodeValue=time+" ";ampm.textContent=dayPeriod}setInterval(updateTime,1000);updateTime();
     const COVERFLOW_PATH="subprojects/coverflow-player/dist/index.html";
     const COVERFLOW_LOCAL_ORIGIN="http://127.0.0.1:4182/";
-    const COVERFLOW_VERSION="vinyl-ui-20260608-4";
+    const COVERFLOW_VERSION="vinyl-ui-20260608-5";
     const normalizeCoverflowUrl=url=>{
       const target=url||COVERFLOW_PATH;
       try{
