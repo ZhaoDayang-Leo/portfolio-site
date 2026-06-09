@@ -210,9 +210,19 @@ export default function CoverFlow() {
       }
       scheduleUpdate()
     }
+    const onWheel = (e: WheelEvent) => {
+      if (featuredIndexRef.current !== null) return
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) || Math.abs(e.deltaX) < 0.5) return
+      e.preventDefault()
+      stopHandInertia()
+      hasUserInteractedRef.current = true
+      container.scrollLeft += e.deltaX
+      scheduleUpdate()
+    }
     const onResize = () => scheduleUpdate()
 
     container.addEventListener('scroll', onScroll, { passive: true })
+    container.addEventListener('wheel', onWheel, { passive: false })
     window.addEventListener('resize', onResize)
 
     const initTimer = window.setTimeout(() => {
@@ -287,6 +297,7 @@ export default function CoverFlow() {
       }
       stopHandInertia()
       container.removeEventListener('scroll', onScroll)
+      container.removeEventListener('wheel', onWheel)
       window.removeEventListener('resize', onResize)
       container.removeEventListener('mousedown', onMouseDown)
       container.removeEventListener('mouseleave', onMouseLeave)
@@ -345,7 +356,18 @@ export default function CoverFlow() {
       void audio.play().then(
         () => setIsPlaying(true),
         () => {
-          if (playbackWantedRef.current) setIsPlaying(false)
+          const wasMuted = audio.muted
+          audio.muted = true
+          void audio.play().then(
+            () => {
+              audio.muted = wasMuted
+              setIsPlaying(true)
+            },
+            () => {
+              audio.muted = wasMuted
+              if (playbackWantedRef.current) setIsPlaying(false)
+            },
+          )
         },
       )
     }
@@ -457,6 +479,25 @@ export default function CoverFlow() {
   useEffect(() => {
     queueCenterPlayback(selectedIndex, selectedIndex === INITIAL_INDEX ? 620 : 480)
   }, [queueCenterPlayback, selectedIndex])
+
+  useEffect(() => {
+    if (USE_EXTERNAL_AUDIO) return
+    playbackWantedRef.current = true
+    const tryPlayback = () => playAlbumAudio(selectedIndexRef.current)
+    const startTimer = window.setTimeout(tryPlayback, 180)
+    const retryEvents = ['pointerdown', 'keydown', 'wheel', 'touchstart'] as const
+    const onFirstGesture = () => {
+      if (audioRef.current?.paused) tryPlayback()
+      retryEvents.forEach((type) => window.removeEventListener(type, onFirstGesture))
+    }
+
+    retryEvents.forEach((type) => window.addEventListener(type, onFirstGesture, { passive: true }))
+
+    return () => {
+      window.clearTimeout(startTimer)
+      retryEvents.forEach((type) => window.removeEventListener(type, onFirstGesture))
+    }
+  }, [playAlbumAudio])
 
   const handleHandPan = useCallback((deltaX: number) => {
     const container = containerRef.current
