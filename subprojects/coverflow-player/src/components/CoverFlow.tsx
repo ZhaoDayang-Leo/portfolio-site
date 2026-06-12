@@ -210,19 +210,9 @@ export default function CoverFlow() {
       }
       scheduleUpdate()
     }
-    const onWheel = (e: WheelEvent) => {
-      if (featuredIndexRef.current !== null) return
-      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) || Math.abs(e.deltaX) < 0.5) return
-      e.preventDefault()
-      stopHandInertia()
-      hasUserInteractedRef.current = true
-      container.scrollLeft += e.deltaX
-      scheduleUpdate()
-    }
     const onResize = () => scheduleUpdate()
 
     container.addEventListener('scroll', onScroll, { passive: true })
-    container.addEventListener('wheel', onWheel, { passive: false })
     window.addEventListener('resize', onResize)
 
     const initTimer = window.setTimeout(() => {
@@ -297,7 +287,6 @@ export default function CoverFlow() {
       }
       stopHandInertia()
       container.removeEventListener('scroll', onScroll)
-      container.removeEventListener('wheel', onWheel)
       window.removeEventListener('resize', onResize)
       container.removeEventListener('mousedown', onMouseDown)
       container.removeEventListener('mouseleave', onMouseLeave)
