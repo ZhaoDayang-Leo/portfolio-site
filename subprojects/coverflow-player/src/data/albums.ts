@@ -11,7 +11,10 @@ export interface Album {
   overlayClass: string
 }
 
-export const albums: Album[] = [
+const resolveMediaUrl = (path: string) =>
+  new URL(path, typeof document !== 'undefined' ? document.baseURI : import.meta.url).href
+
+const albumData: Album[] = [
   {
     id: '21',
     title: 'Our Sky',
@@ -242,6 +245,13 @@ export const albums: Album[] = [
     overlayClass: '',
   },
 ]
+
+export const albums: Album[] = albumData.map((album) => ({
+  ...album,
+  imageUrl: resolveMediaUrl(album.imageUrl),
+  audioUrl: album.audioUrl ? resolveMediaUrl(album.audioUrl) : undefined,
+  lyricUrl: album.lyricUrl ? resolveMediaUrl(album.lyricUrl) : undefined,
+}))
 
 export const initialAlbumId = '21'
 export const initialAlbumIndex = Math.max(
