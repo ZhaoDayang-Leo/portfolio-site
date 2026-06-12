@@ -2089,7 +2089,7 @@
     function updateTime(){const el=document.getElementById("local-time");const ampm=document.getElementById("time-ampm");if(!el||!ampm)return;const parts=new Intl.DateTimeFormat(currentLang==="en"?"en-US":"zh-CN",{timeZone:"Asia/Shanghai",hour12:true,hour:"2-digit",minute:"2-digit",second:"2-digit"}).formatToParts(new Date());const time=["hour","minute","second"].map(t=>parts.find(p=>p.type===t)?.value||"00").join(":");const dayPeriod=parts.find(p=>p.type==="dayPeriod")?.value||"";el.childNodes[0].nodeValue=time+" ";ampm.textContent=dayPeriod}setInterval(updateTime,1000);updateTime();
     const COVERFLOW_PATH="subprojects/coverflow-player/dist/index.html";
     const COVERFLOW_LOCAL_ORIGIN="http://127.0.0.1:4182/";
-    const COVERFLOW_VERSION="vinyl-ui-20260607-3";
+    const COVERFLOW_VERSION="vinyl-ui-20260612-2";
     const normalizeCoverflowUrl=url=>{
       const target=url||COVERFLOW_PATH;
       try{
@@ -2531,8 +2531,8 @@
           const childWantsPlayback=Boolean(event.data.isPlaying);
           portfolioPlayerState.album=event.data.album||portfolioPlayerState.album;
           syncPortfolioAudioSource();
-	          if(childWantsPlayback&&portfolioPlaybackRequested&&!portfolioUserPaused){
-	            void playPortfolioAudio();
+	          if(childWantsPlayback&&!portfolioUserPaused){
+	            void playPortfolioAudio({force:true});
           }else{
             portfolioPlayerState.isPlaying=!portfolioAudio.paused;
           }

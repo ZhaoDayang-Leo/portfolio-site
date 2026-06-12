@@ -150,6 +150,7 @@ export default function CoverFlow() {
     }
 
     if (closestIndex !== selectedIndexRef.current) {
+      hasUserInteractedRef.current = true
       selectedIndexRef.current = closestIndex
       setSelectedIndex(closestIndex)
     }
@@ -397,7 +398,7 @@ export default function CoverFlow() {
         album?.audioUrl && typeof window !== 'undefined'
           ? new URL(album.audioUrl, window.location.href).href
           : ''
-      if (!playbackWantedRef.current) return
+      if (!playbackWantedRef.current && !hasUserInteractedRef.current) return
       if (audio && albumAudioHref && !audio.paused && audio.currentSrc === albumAudioHref) return
       playAlbumAudio(index)
     }, delay)
