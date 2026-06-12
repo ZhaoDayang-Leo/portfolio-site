@@ -447,8 +447,7 @@
     .sleeve-player{left:962px;top:126px}
     .reading-widget{left:961px;top:318px;transform:rotate(0deg);--r:0deg}
     .reading-widget:hover{transform:scale(1.035) rotate(0deg)}
-    .life{position:relative;z-index:20;height:calc(640vh + 160px);min-height:5600px;overflow:visible;--life-scrub:1;--album-wall-progress:0}
-    .works{position:relative;z-index:220;isolation:isolate;transform:translateZ(0)}
+    .life{height:calc(640vh + 160px);min-height:5600px;overflow:visible;--life-scrub:1;--album-wall-progress:0}
     .life-stage{position:sticky;top:0;height:calc(100vh + 160px);min-height:1060px;overflow:hidden;background-color:#f8fafc;background-image:linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px);background-size:40px 40px;isolation:isolate}
     .life-stage .motion-reveal{opacity:1;translate:0 0;scale:1;filter:none;transition:none}
     .life-title{left:0;top:112px;width:100%;text-align:center;font-size:58px;line-height:1.05}
@@ -1018,7 +1017,7 @@
 
   <footer class="portfolio-footer" id="portfolio-footer" aria-label="Portfolio footer">
     <div class="footer-copy">
-      <h2>Let the work<br>speak, then let<br>the details<br>answer.</h2>
+      <h2>Let the work<br>speak, then let the<br>details<br>answer.</h2>
       <p>产品设计、设计系统、复杂工具界面与一点私人生活切片。欢迎继续浏览项目详情，或通过微信 zhaogarden 联系我。</p>
     </div>
     <figure class="footer-wechat-card" id="footer-wechat-card" aria-label="WeChat zhaogarden">
@@ -2090,7 +2089,7 @@
     function updateTime(){const el=document.getElementById("local-time");const ampm=document.getElementById("time-ampm");if(!el||!ampm)return;const parts=new Intl.DateTimeFormat(currentLang==="en"?"en-US":"zh-CN",{timeZone:"Asia/Shanghai",hour12:true,hour:"2-digit",minute:"2-digit",second:"2-digit"}).formatToParts(new Date());const time=["hour","minute","second"].map(t=>parts.find(p=>p.type===t)?.value||"00").join(":");const dayPeriod=parts.find(p=>p.type==="dayPeriod")?.value||"";el.childNodes[0].nodeValue=time+" ";ampm.textContent=dayPeriod}setInterval(updateTime,1000);updateTime();
     const COVERFLOW_PATH="subprojects/coverflow-player/dist/index.html";
     const COVERFLOW_LOCAL_ORIGIN="http://127.0.0.1:4182/";
-    const COVERFLOW_VERSION="vinyl-ui-20260609-1";
+    const COVERFLOW_VERSION="vinyl-ui-20260607-3";
     const normalizeCoverflowUrl=url=>{
       const target=url||COVERFLOW_PATH;
       try{
@@ -2150,8 +2149,6 @@
     };
 	    const coverImageCache=new Set();
 	    const portfolioAudio=new Audio();
-	    portfolioAudio.autoplay=true;
-	    portfolioAudio.playsInline=true;
 	    portfolioAudio.preload="auto";
 	    let portfolioPlaybackRequested=false;
 	    let portfolioUserPaused=false;
@@ -2199,30 +2196,18 @@
 	        setPortfolioAudioStatus("missing-source");
 	        return Promise.resolve(false);
 	      }
-	      const markPlaying=()=>{
+	      return portfolioAudio.play().then(()=>{
 	        if(requestId!==portfolioPlaybackRequestId)return false;
 	        portfolioPlayerState.isPlaying=true;
 	        renderPortfolioPlayers();
 	        setPortfolioAudioStatus("playing");
 	        return true;
-	      };
-	      const markRejected=error=>{
+	      },error=>{
 	        if(requestId!==portfolioPlaybackRequestId)return false;
 	        portfolioPlayerState.isPlaying=false;
 	        renderPortfolioPlayers();
 	        setPortfolioAudioStatus("rejected",error);
 	        return false;
-	      };
-	      return portfolioAudio.play().then(markPlaying,error=>{
-	        const wasMuted=portfolioAudio.muted;
-	        portfolioAudio.muted=true;
-	        return portfolioAudio.play().then(()=>{
-	          portfolioAudio.muted=wasMuted;
-	          return markPlaying();
-	        },fallbackError=>{
-	          portfolioAudio.muted=wasMuted;
-	          return markRejected(fallbackError||error);
-	        });
 	      });
 	    };
 	    const pausePortfolioAudio=(options={})=>{
@@ -2250,12 +2235,9 @@
 	    const tryInitialPortfolioPlayback=()=>{
 	      if(portfolioUserPaused)return;
 	      if(isExternalPreviewOpen())return;
-	      if(portfolioPlaybackRequested&&!portfolioAudio.paused)return;
-	      syncPortfolioAudioSource();
-	      try{portfolioAudio.load()}catch{}
 	      void playPortfolioAudio();
 	    };
-    [120,900,1800].forEach(delay=>window.setTimeout(tryInitialPortfolioPlayback,delay));
+    window.setTimeout(tryInitialPortfolioPlayback,120);
     const initialPlaybackGestureEvents=["pointerdown","keydown","wheel","touchstart"];
     const removeInitialPlaybackGestureListeners=()=>{
       initialPlaybackGestureEvents.forEach(type=>window.removeEventListener(type,handleInitialPlaybackGesture));
@@ -2269,6 +2251,7 @@
 	        removeInitialPlaybackGestureListeners();
 	        return;
 	      }
+      if(event.target?.closest?.("#music-toggle,#vinyl-player,#external-preview"))return;
       void playPortfolioAudio().then(ok=>{if(ok)removeInitialPlaybackGestureListeners()});
     };
     initialPlaybackGestureEvents.forEach(type=>{
