@@ -247,11 +247,11 @@
     .linkedin b{display:block;margin:1px 0 2px;font-size:23px;line-height:29px;letter-spacing:.01em}
     .bottom-nav{bottom:58px;padding:8px 10px;gap:8px;border-color:rgba(15,23,42,.055);background:rgba(255,255,255,.78);box-shadow:0 14px 36px rgba(15,23,42,.08),0 3px 8px rgba(15,23,42,.04);overflow:visible}
     .bottom-nav button,.bottom-nav a{position:relative;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:0;border-radius:50%;background:transparent;color:#4b5563;font-size:18px;line-height:1;box-shadow:none;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
-    .bottom-nav button:before,.bottom-nav a:before{content:attr(data-tooltip);position:absolute;z-index:20;left:50%;bottom:calc(100% + 10px);padding:7px 10px;border-radius:999px;background:rgba(17,24,39,.92);color:#fff;font-size:12px;line-height:16px;font-weight:600;letter-spacing:0;white-space:nowrap;opacity:0;visibility:hidden;transform:translateX(-50%) translateY(6px) scale(.96);transition:opacity .18s cubic-bezier(.2,.8,.2,1),visibility .18s,transform .18s cubic-bezier(.2,.8,.2,1);pointer-events:none;box-shadow:0 10px 24px rgba(15,23,42,.16)}
-    .bottom-nav button:after,.bottom-nav a:after{content:"";position:absolute;z-index:19;left:50%;bottom:calc(100% + 4px);width:8px;height:8px;border-radius:2px;background:rgba(17,24,39,.92);opacity:0;visibility:hidden;transform:translateX(-50%) translateY(6px) rotate(45deg);transition:opacity .18s cubic-bezier(.2,.8,.2,1),visibility .18s,transform .18s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+    .bottom-nav button:before,.bottom-nav a:before{content:attr(data-tooltip);position:absolute;z-index:3;left:50%;bottom:calc(100% + 10px);padding:7px 10px;border-radius:999px;background:rgba(17,24,39,.92);color:#fff;font-size:12px;line-height:16px;font-weight:600;letter-spacing:0;white-space:nowrap;opacity:0;visibility:hidden;transform:translateX(-50%) translateY(6px) scale(.96);transition:opacity .18s cubic-bezier(.2,.8,.2,1),visibility .18s,transform .18s cubic-bezier(.2,.8,.2,1);pointer-events:none;box-shadow:0 10px 24px rgba(15,23,42,.16)}
+    .bottom-nav .nav-hit-area{position:absolute;z-index:0;left:-8px;right:-8px;top:-16px;bottom:-8px;border-radius:22px;display:block}
+    .bottom-nav i{position:relative;z-index:1;pointer-events:none}
     .bottom-nav button:hover,.bottom-nav a:hover,.bottom-nav button:focus-visible,.bottom-nav a:focus-visible{color:#111827;background:rgba(255,255,255,.62)}
     .bottom-nav button:hover:before,.bottom-nav a:hover:before,.bottom-nav button:focus-visible:before,.bottom-nav a:focus-visible:before{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0) scale(1)}
-    .bottom-nav button:hover:after,.bottom-nav a:hover:after,.bottom-nav button:focus-visible:after,.bottom-nav a:focus-visible:after{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0) rotate(45deg)}
     .glass-surface{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;transition:opacity .26s ease-out}
     .glass-surface__filter{position:absolute;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none;opacity:0}
     .glass-surface__content{position:relative;z-index:1;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:inherit}
@@ -1060,10 +1060,10 @@
 
   <nav class="bottom-nav glass-surface glass-surface-js" data-glass-radius="54" data-glass-border-width="0.12" data-glass-brightness="72" data-glass-opacity="0.9" data-glass-blur="13" data-glass-background-opacity="0.34" data-glass-saturation="1.55" data-glass-distortion-scale="-132" data-glass-red-offset="4" data-glass-green-offset="12" data-glass-blue-offset="22" data-glass-mix-blend-mode="screen">
     <div class="glass-surface__content">
-      <button type="button" data-bottom-nav="top" data-tooltip="回到顶部" aria-label="回到顶部"><i class="ph ph-house"></i></button>
-      <button type="button" data-bottom-nav="life" data-tooltip="关于生活" aria-label="定位到生活区域"><i class="ph ph-smiley"></i></button>
-      <a href="assets/downloads/2026-zhao-dongyang-portfolio.pdf" download="2026 赵东阳 作品集.pdf" data-tooltip="下载作品集" aria-label="下载作品集"><i class="ph ph-file-pdf"></i></a>
-      <a href="assets/downloads/zhao-dongyang-resume.pdf" download="赵东阳 简历.pdf" data-tooltip="下载简历" aria-label="下载简历"><i class="ph ph-file-text"></i></a>
+      <button type="button" data-bottom-nav="top" data-tooltip="回到顶部" aria-label="回到顶部"><span class="nav-hit-area" aria-hidden="true"></span><i class="ph ph-house"></i></button>
+      <button type="button" data-bottom-nav="life" data-tooltip="关于生活" aria-label="定位到生活区域"><span class="nav-hit-area" aria-hidden="true"></span><i class="ph ph-smiley"></i></button>
+      <a href="assets/downloads/2026-zhao-dongyang-portfolio.pdf" download="2026 赵东阳 作品集.pdf" data-tooltip="下载作品集" aria-label="下载作品集"><span class="nav-hit-area" aria-hidden="true"></span><i class="ph ph-file-pdf"></i></a>
+      <a href="assets/downloads/zhao-dongyang-resume.pdf" download="赵东阳 简历.pdf" data-tooltip="下载简历" aria-label="下载简历"><span class="nav-hit-area" aria-hidden="true"></span><i class="ph ph-file-text"></i></a>
     </div>
   </nav>
 
