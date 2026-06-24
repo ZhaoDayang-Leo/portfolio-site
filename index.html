@@ -246,7 +246,12 @@
     .linkedin small{font-size:13px;line-height:18px;letter-spacing:.04em;text-transform:none;color:rgba(255,255,255,.76)}
     .linkedin b{display:block;margin:1px 0 2px;font-size:23px;line-height:29px;letter-spacing:.01em}
     .bottom-nav{bottom:58px;padding:11px 12px;gap:11px;border-color:rgba(15,23,42,.055);background:rgba(255,255,255,.78);box-shadow:0 14px 36px rgba(15,23,42,.08),0 3px 8px rgba(15,23,42,.04)}
-    .bottom-nav button{width:41px;height:41px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;color:#4b5563;font-size:18px;box-shadow:none}
+    .bottom-nav button,.bottom-nav a{position:relative;width:41px;height:41px;display:flex;align-items:center;justify-content:center;border:0;border-radius:50%;background:transparent;color:#4b5563;font-size:18px;line-height:1;box-shadow:none;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+    .bottom-nav button:before,.bottom-nav a:before{content:attr(data-tooltip);position:absolute;left:50%;bottom:calc(100% + 13px);padding:7px 10px;border-radius:999px;background:rgba(17,24,39,.92);color:#fff;font-size:12px;line-height:16px;font-weight:600;letter-spacing:0;white-space:nowrap;opacity:0;visibility:hidden;transform:translateX(-50%) translateY(6px) scale(.96);transition:opacity .18s cubic-bezier(.2,.8,.2,1),visibility .18s,transform .18s cubic-bezier(.2,.8,.2,1);pointer-events:none;box-shadow:0 10px 24px rgba(15,23,42,.16)}
+    .bottom-nav button:after,.bottom-nav a:after{content:"";position:absolute;left:50%;bottom:calc(100% + 7px);width:8px;height:8px;border-radius:2px;background:rgba(17,24,39,.92);opacity:0;visibility:hidden;transform:translateX(-50%) translateY(6px) rotate(45deg);transition:opacity .18s cubic-bezier(.2,.8,.2,1),visibility .18s,transform .18s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+    .bottom-nav button:hover,.bottom-nav a:hover,.bottom-nav button:focus-visible,.bottom-nav a:focus-visible{color:#111827;background:rgba(255,255,255,.62)}
+    .bottom-nav button:hover:before,.bottom-nav a:hover:before,.bottom-nav button:focus-visible:before,.bottom-nav a:focus-visible:before{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0) scale(1)}
+    .bottom-nav button:hover:after,.bottom-nav a:hover:after,.bottom-nav button:focus-visible:after,.bottom-nav a:focus-visible:after{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0) rotate(45deg)}
     .glass-surface{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;transition:opacity .26s ease-out}
     .glass-surface__filter{position:absolute;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none;opacity:0}
     .glass-surface__content{position:relative;z-index:1;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:inherit}
@@ -256,7 +261,7 @@
     .bottom-nav.glass-surface{position:fixed;left:50%;bottom:58px;width:max-content;height:auto;transform:translateX(-50%);border:0;background:transparent;border-radius:999px;isolation:isolate}
     .bottom-nav .glass-surface__content{gap:11px;padding:0}
     .bottom-nav.glass-surface:before{content:"";position:absolute;inset:1px;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.78),rgba(255,255,255,.24));pointer-events:none;z-index:0}
-    .bottom-nav.glass-surface button{position:relative;z-index:2;border-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+    .bottom-nav.glass-surface button,.bottom-nav.glass-surface a{position:relative;z-index:2;border-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
     .reading-widget{left:600px;top:654px;width:350px;height:320px;padding:22px;border-radius:20px;background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(248,249,250,.95));border:1px solid rgba(255,255,255,.5);box-shadow:0 20px 50px -12px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,1);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transform:rotate(-3deg);--r:-3deg;display:flex;flex-direction:column;overflow:hidden}
     .reading-widget:hover{transform:scale(1.035) rotate(-3deg)}
     .reading-glow{right:-80px;top:-80px;width:256px;height:256px;background:#f0fdfa;filter:blur(48px);opacity:.6}
@@ -462,9 +467,9 @@
     .available{left:156px;top:335px;width:210px;height:104px;transform:rotate(0deg);--r:0deg}
     .available:hover{transform:scale(1.04) rotate(0deg)}
     .sleeve-player{left:624px;top:258px}
-    .linkedin{left:1057px;top:224px;width:236px;height:106px;padding:24px;transform:rotate(0deg);--r:0deg}
+    .linkedin{left:1057px;top:176px;width:236px;height:106px;padding:24px;transform:rotate(0deg);--r:0deg}
     .linkedin:hover{transform:scale(1.04) rotate(0deg)}
-    .learn{left:1057px;top:354px;width:236px;height:85px;padding:24px;transform:rotate(0deg);--r:0deg}
+    .learn{left:1057px;top:306px;width:236px;height:132px;padding:24px;transform:rotate(0deg);--r:0deg}
     .learn:hover{transform:scale(1.04) rotate(0deg)}
     .chips.specimen-card{left:298px;top:463px;box-sizing:border-box;width:300px;height:180px;min-height:0;transform:rotate(0deg);--r:0deg}
     .chips.specimen-card:hover{transform:scale(1.04) rotate(0deg)}
@@ -478,9 +483,11 @@
     .available{display:flex;flex-direction:column;justify-content:center;gap:17px;padding:24px;overflow:hidden}
     .available small{margin:0;gap:10px;font-size:10.5px;line-height:16px;letter-spacing:.36em}
     .available b{margin:0;font-size:21px;line-height:28px;letter-spacing:-.45px;white-space:nowrap}
-    .learn{display:flex;flex-direction:column;justify-content:center;gap:10px;padding:18px 24px;overflow:hidden}
+    .learn{display:flex;flex-direction:column;justify-content:center;gap:12px;padding:20px 24px;overflow:hidden}
     .learn small{margin:0;font-size:11px;line-height:15px}
-    .learn b{margin:0;gap:10px;font-size:16px;line-height:22px;white-space:nowrap}
+    .learn b{margin:0;font-size:16px;line-height:22px;white-space:nowrap}
+    .learn b.learn-topics{display:flex;flex-direction:column;align-items:flex-start;gap:13px}
+    .learn-row{display:flex;align-items:center;gap:10px}
     .linkedin{display:flex;align-items:center;gap:18px;padding:24px;overflow:hidden}
     .linkedin .icon{width:58px;height:58px;flex:0 0 58px;border-radius:10px}
     .linkedin .icon img{display:block;width:100%;height:100%;object-fit:cover;border-radius:8px}
@@ -574,7 +581,7 @@
     .time-large{font-size:35px;line-height:40px;letter-spacing:-1.7px}
     .available{width:max-content;min-width:210px;max-width:none;padding:24px 32px}
     .available b{max-width:none;overflow:visible;text-overflow:clip}
-    .learn{width:max-content;min-width:236px;max-width:none;padding:18px 28px}
+    .learn{width:max-content;min-width:236px;max-width:none;padding:20px 24px}
     .learn b{max-width:none;overflow:visible;text-overflow:clip}
     .chips.specimen-card{left:auto;right:calc(100vw - (600px + var(--life-layout-x)));width:fit-content;height:auto;min-height:0}
     .chips .chip-list.tags-container{display:flex;flex-wrap:wrap;gap:10px;align-items:center;width:330px}
@@ -832,7 +839,13 @@
       </div>
       <div class="life-card call"><i class="ph ph-calendar-blank" style="font-size:26px;color:#9ca3af"></i><div><small data-i18n="life.call.open">开放工作</small><b data-i18n="life.call.book">预约电话</b><small data-i18n="life.call.time">安排30分钟</small></div></div>
       <div class="life-card available"><small data-i18n="life.available.kicker">Available Now</small><b data-i18n="life.available.role">产品设计师</b></div>
-      <div class="life-card learn"><small data-i18n="life.learn.kicker">目前正在学习</small><b><span>💻</span> <span data-i18n="life.learn.vibe">Vibecoding</span> <span>💰</span> <span data-i18n="life.learn.invest">投资</span></b></div>
+      <div class="life-card learn">
+        <small data-i18n="life.learn.kicker">目前正在学习</small>
+        <b class="learn-topics">
+          <span class="learn-row"><span>💻</span> <span data-i18n="life.learn.vibe">Vibecoding</span> <span>💰</span> <span data-i18n="life.learn.invest">投资</span></span>
+          <span class="learn-row"><span>🔮</span> <span data-i18n="life.learn.ziwei">紫微斗数</span></span>
+        </b>
+      </div>
       <div class="life-card chips specimen-card">
         <div class="specimen-head">
           <h3 data-i18n="life.interests.title">兴趣</h3>
@@ -1047,10 +1060,10 @@
 
   <nav class="bottom-nav glass-surface glass-surface-js" data-glass-radius="54" data-glass-border-width="0.12" data-glass-brightness="72" data-glass-opacity="0.9" data-glass-blur="13" data-glass-background-opacity="0.34" data-glass-saturation="1.55" data-glass-distortion-scale="-132" data-glass-red-offset="4" data-glass-green-offset="12" data-glass-blue-offset="22" data-glass-mix-blend-mode="screen">
     <div class="glass-surface__content">
-      <button><i class="ph ph-house"></i></button>
-      <button><i class="ph ph-smiley"></i></button>
-      <button><i class="ph ph-file-pdf"></i></button>
-      <button><i class="ph ph-file-text"></i></button>
+      <button type="button" data-bottom-nav="top" data-tooltip="回到顶部" aria-label="回到顶部"><i class="ph ph-house"></i></button>
+      <button type="button" data-bottom-nav="life" data-tooltip="关于生活" aria-label="定位到生活区域"><i class="ph ph-smiley"></i></button>
+      <a href="assets/downloads/2026-zhao-dongyang-portfolio.pdf" download="2026 赵东阳 作品集.pdf" data-tooltip="下载作品集" aria-label="下载作品集"><i class="ph ph-file-pdf"></i></a>
+      <a href="assets/downloads/zhao-dongyang-resume.pdf" download="赵东阳 简历.pdf" data-tooltip="下载简历" aria-label="下载简历"><i class="ph ph-file-text"></i></a>
     </div>
   </nav>
 
@@ -1156,6 +1169,24 @@
       });
     }
     initGlassSurfaces();
+    function initBottomNavActions(){
+      const reduceMotion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const scrollOptions=top=>window.scrollTo({top,behavior:reduceMotion?"auto":"smooth"});
+      document.querySelectorAll("[data-bottom-nav]").forEach(button=>{
+        button.addEventListener("click",()=>{
+          const action=button.dataset.bottomNav;
+          if(action==="top"){
+            scrollOptions(0);
+            return;
+          }
+          if(action==="life"){
+            const target=document.querySelector(".life");
+            if(target)scrollOptions(target.offsetTop);
+          }
+        });
+      });
+    }
+    initBottomNavActions();
     const i18n={
       zh:{
         "hero.greeting":"👋 Hi～我是赵东阳","hero.name":"赵东阳","hero.title":"UI & Product Designer",
@@ -1165,7 +1196,7 @@
         "super.title":"那么,<br>我的超能力是? 🦹️","super.play":"Play Around!","super.photo":"摄影爱好者","super.pet":"铲屎官","super.system":"设计规范系统","super.fitness":"曾经健身爱好者（持证）","super.product":"产品设计","super.ux":"UI / 用户体验设计","super.hint":"Drag / toss / let gravity do its thing",
         "exp.title":"我的设计 ⛰️ 旅程","exp.tag":"Experience","exp.bytedance.name":"字节跳动 · 飞书项目","exp.bytedance.time":"2022 至今","exp.bytedance.copy1":"<strong>产品支持：</strong>配合产品对主要负责飞书项目用户侧功能模块进行维护和升级，包括<span class=\"text-highlighter\">表格、甘特、人员排期、度量</span>等视图模块。","exp.bytedance.copy2":"<span class=\"text-highlighter\">设计系统：底层规范、组件搭建、设计 D to C，暗黑模式、整体改版升级</span>","exp.youdao.name":"网易有道 · 有道词典","exp.youdao.copy":"负责<span class=\"text-highlighter\">有道词典 9.0</span>改版中单词本板块的设计工作，与团队共同探讨有道词典 9.0 改版方向、视觉语言定义等，并延伸至<span class=\"text-highlighter\">单词本</span>模块，结合产品功能对单词本进行整体升级，增加用户渗透率。","exp.tuyi.copy":"参与两次<span class=\"text-highlighter\">交通银行买单吧</span>重大改版设计，包含前期调研、设计决策、流程设计、运营设计等工作。",
         "works.title":"代表作品","works.metrics.title":"度量 3.0","works.metrics.meta":"BI / 设计主导","works.gantt.title":"甘特","works.gantt.meta":"UI / 用户体验","works.rebrand.meta":"设计系统 / 设计主导","works.view":"View",
-        "life.title":"I design for life","life.call.open":"开放工作","life.call.book":"预约电话","life.call.time":"安排30分钟","life.available.kicker":"Available Now","life.available.role":"产品设计师","life.learn.kicker":"目前正在学习","life.learn.vibe":"Vibecoding","life.learn.invest":"投资","life.interests.title":"兴趣","life.interests.photo":"摄影","life.interests.travel":"旅行","life.interests.finance":"理财","life.interests.fitness":"健身","life.interests.music":"音乐","life.interests.reading":"阅读","life.interests.walking":"散步","life.interests.cooking":"料理","life.interests.films":"高分影视游戏","life.interests.restaurants":"餐厅","life.rate":"评价此作品集","life.reading.status":"目前正在阅读","life.reading.count":"2 本","life.books.anthropologist.title":"天真的人类学家","life.books.anthropologist.author":"[英] 奈吉尔·巴利","life.books.consumer.title":"制造消费者","life.books.consumer.author":"[法] 安东尼·加卢佐","life.orange":"工作前的 CrossFit，<br>周末新餐厅，<br>音乐始终开启。","life.wechat.kicker":"在网上找到我","life.wechat.title":"微信","life.cv.title":"恢复同步","life.cv.meta":"PDF·1页",
+        "life.title":"I design for life","life.call.open":"开放工作","life.call.book":"预约电话","life.call.time":"安排30分钟","life.available.kicker":"Available Now","life.available.role":"产品设计师","life.learn.kicker":"目前正在学习","life.learn.vibe":"Vibecoding","life.learn.invest":"投资","life.learn.ziwei":"紫微斗数","life.interests.title":"兴趣","life.interests.photo":"摄影","life.interests.travel":"旅行","life.interests.finance":"理财","life.interests.fitness":"健身","life.interests.music":"音乐","life.interests.reading":"阅读","life.interests.walking":"散步","life.interests.cooking":"料理","life.interests.films":"高分影视游戏","life.interests.restaurants":"餐厅","life.rate":"评价此作品集","life.reading.status":"目前正在阅读","life.reading.count":"2 本","life.books.anthropologist.title":"天真的人类学家","life.books.anthropologist.author":"[英] 奈吉尔·巴利","life.books.consumer.title":"制造消费者","life.books.consumer.author":"[法] 安东尼·加卢佐","life.orange":"工作前的 CrossFit，<br>周末新餐厅，<br>音乐始终开启。","life.wechat.kicker":"在网上找到我","life.wechat.title":"微信","life.cv.title":"恢复同步","life.cv.meta":"PDF·1页",
         "atlas.kicker":"Personal atlas","atlas.title":"生活素材库","atlas.intro":"把摄影、歌单、持仓、旅行攻略和收藏餐厅放到一个可以浏览的界面里。它不像简历，更像一张持续更新的兴趣地图。","atlas.photo1":"山路 / 清晨雾气","atlas.photo2":"林间绿光","atlas.photo3":"城市边缘","atlas.playlist":"最近歌单","atlas.holdings":"观察持仓","atlas.asset1":"纳指 ETF","atlas.asset1.meta":"长期配置","atlas.asset2":"AI 基础设施","atlas.asset2.meta":"高波动","atlas.asset3":"黄金 / 现金","atlas.asset3.meta":"防守仓","atlas.asset4":"消费品牌","atlas.asset4.meta":"小比例","atlas.map.title":"旅行攻略 × 收藏餐厅","atlas.filter.all":"全部","atlas.filter.travel":"旅行攻略","atlas.filter.food":"收藏餐厅","atlas.map.pending":"AMap favorite sync pending",
         "places.beijing.title":"北京 / 胡同散步线","places.beijing.body":"午后从美术馆附近开始，穿过安静胡同，找一家小馆吃晚饭。适合拍门牌、树影和傍晚的窗光。","places.tag.photo":"摄影点","places.tag.coffee":"咖啡","places.tag.halfday":"半日路线","places.fallback.city":"高德收藏","places.fallback.real":"真实收藏地点","places.fallback.saved":"收藏于","places.type.food":"收藏餐厅","places.type.travel":"旅行攻略","places.marker.food":"食","places.marker.travel":"游","places.sync.fallback":"AMap sync fallback","places.sync.done":"Synced from AMap",
         "chat.loading":"正在整理回答","chat.default":"谢谢你的问题。\n\n你可以继续浏览下面的作品与经历，也欢迎直接问我项目、方法或合作方式。","chat.received":"收到，我会认真看看这个问题。"
@@ -1178,7 +1209,7 @@
         "super.title":"So,<br>what are my superpowers? 🦹️","super.play":"Play Around!","super.photo":"Photography lover","super.pet":"Cat caretaker","super.system":"Design systems","super.fitness":"Former certified fitness enthusiast","super.product":"Product design","super.ux":"UI / UX design","super.hint":"Drag / toss / let gravity do its thing",
         "exp.title":"My Design ⛰️ Journey","exp.tag":"Experience","exp.bytedance.name":"ByteDance · Feishu Project","exp.bytedance.time":"2022 - Present","exp.bytedance.copy1":"<strong>Product support:</strong> Partnered with PMs to maintain and upgrade Feishu Project user-facing modules, including <span class=\"text-highlighter\">Table, Gantt, Resource Planning, Metrics</span>, and other views.","exp.bytedance.copy2":"<span class=\"text-highlighter\">Design system: Foundation guidelines, component building, design-to-code, dark mode, and full redesign upgrades.</span>","exp.youdao.name":"NetEase Youdao · Youdao Dictionary","exp.youdao.copy":"Led the design of the Wordbook module in the <span class=\"text-highlighter\">Youdao Dictionary 9.0</span> redesign. Collaborated with the team on redesign direction and visual language, then extended the system into <span class=\"text-highlighter\">Wordbook</span> to upgrade the experience and improve user penetration.","exp.tuyi.copy":"Contributed to two major redesigns of <span class=\"text-highlighter\">Bank of Communications Pay</span>, covering research, design decisions, flows, and campaign design.",
         "works.title":"Selected Works","works.metrics.title":"Metrics 3.0","works.metrics.meta":"BI / Design Lead","works.gantt.title":"Gantt","works.gantt.meta":"UI / UX","works.rebrand.meta":"Design System / Design Lead","works.view":"View",
-        "life.title":"I design for life","life.call.open":"Open to work","life.call.book":"Book a call","life.call.time":"30 minutes","life.available.kicker":"Available Now","life.available.role":"Product Designer","life.learn.kicker":"Currently learning","life.learn.vibe":"Vibecoding","life.learn.invest":"Investing","life.interests.title":"Interests","life.interests.photo":"Photography","life.interests.travel":"Travel","life.interests.finance":"Finance","life.interests.fitness":"Fitness","life.interests.music":"Music","life.interests.reading":"Reading","life.interests.walking":"Walking","life.interests.cooking":"Cooking","life.interests.films":"Great films & games","life.interests.restaurants":"Restaurants","life.rate":"Rate this portfolio","life.reading.status":"Currently reading","life.reading.count":"2 books","life.books.anthropologist.title":"The Innocent Anthropologist","life.books.anthropologist.author":"Nigel Barley","life.books.consumer.title":"The Making of the Consumer","life.books.consumer.author":"Anthony Galluzzo","life.orange":"CrossFit before work,<br>new restaurants on weekends,<br>music always on.","life.wechat.kicker":"Find me online","life.wechat.title":"WeChat","life.cv.title":"Resume synced","life.cv.meta":"PDF · 1 page",
+        "life.title":"I design for life","life.call.open":"Open to work","life.call.book":"Book a call","life.call.time":"30 minutes","life.available.kicker":"Available Now","life.available.role":"Product Designer","life.learn.kicker":"Currently learning","life.learn.vibe":"Vibecoding","life.learn.invest":"Investing","life.learn.ziwei":"Zi Wei Dou Shu","life.interests.title":"Interests","life.interests.photo":"Photography","life.interests.travel":"Travel","life.interests.finance":"Finance","life.interests.fitness":"Fitness","life.interests.music":"Music","life.interests.reading":"Reading","life.interests.walking":"Walking","life.interests.cooking":"Cooking","life.interests.films":"Great films & games","life.interests.restaurants":"Restaurants","life.rate":"Rate this portfolio","life.reading.status":"Currently reading","life.reading.count":"2 books","life.books.anthropologist.title":"The Innocent Anthropologist","life.books.anthropologist.author":"Nigel Barley","life.books.consumer.title":"The Making of the Consumer","life.books.consumer.author":"Anthony Galluzzo","life.orange":"CrossFit before work,<br>new restaurants on weekends,<br>music always on.","life.wechat.kicker":"Find me online","life.wechat.title":"WeChat","life.cv.title":"Resume synced","life.cv.meta":"PDF · 1 page",
         "atlas.kicker":"Personal atlas","atlas.title":"Life Material Library","atlas.intro":"A browsable interface for photography, playlists, watchlists, travel notes, and favorite restaurants. Less like a resume, more like a living map of interests.","atlas.photo1":"Mountain road / morning mist","atlas.photo2":"Green light in the woods","atlas.photo3":"Edge of the city","atlas.playlist":"Recent playlist","atlas.holdings":"Watchlist","atlas.asset1":"Nasdaq ETF","atlas.asset1.meta":"Long-term allocation","atlas.asset2":"AI infrastructure","atlas.asset2.meta":"High volatility","atlas.asset3":"Gold / Cash","atlas.asset3.meta":"Defensive position","atlas.asset4":"Consumer brands","atlas.asset4.meta":"Small allocation","atlas.map.title":"Travel Notes × Favorite Restaurants","atlas.filter.all":"All","atlas.filter.travel":"Travel notes","atlas.filter.food":"Favorite restaurants","atlas.map.pending":"AMap favorite sync pending",
         "places.beijing.title":"Beijing / Hutong Walk","places.beijing.body":"Start near the art museum in the afternoon, pass through quiet hutongs, and find a small restaurant for dinner. Good for photographing doorplates, tree shadows, and evening window light.","places.tag.photo":"Photo spot","places.tag.coffee":"Coffee","places.tag.halfday":"Half-day route","places.fallback.city":"AMap favorite","places.fallback.real":"Real saved place","places.fallback.saved":"Saved on","places.type.food":"Favorite restaurant","places.type.travel":"Travel note","places.marker.food":"Food","places.marker.travel":"Trip","places.sync.fallback":"AMap sync fallback","places.sync.done":"Synced from AMap",
         "chat.loading":"Composing an answer","chat.default":"Thanks for the question.\n\nYou can keep exploring the work and experience below, or ask me directly about projects, methods, or collaboration.","chat.received":"Got it. I will think carefully about this question."
