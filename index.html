@@ -25,11 +25,8 @@
   <link rel="preload" as="image" href="assets/intro-transition/frame_0001.jpg">
   <link rel="preload" as="image" href="assets/scroll-sequence/frame_0001.jpg">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@1,600&family=Shantell+Sans:wght@500&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
-  <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
   <style>
     *{box-sizing:border-box}html{scroll-behavior:smooth;scrollbar-width:none;--sequence-copy-opacity:0;--sequence-ui-opacity:0;--sequence-chrome-opacity:0;--scroll-hint-opacity:1}html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}body{margin:0;background:#050505;color:#1a1a1a;font-family:"PingFang SC","Noto Sans SC",Inter,sans-serif;overflow-x:hidden;-ms-overflow-style:none;scrollbar-width:none}::selection{background:#fde68a;color:#111827}
     .page{width:100%;min-height:100vh}.section{position:relative;width:100%;overflow:hidden}.light{background:#fdfdfd}.mono{font-family:"JetBrains Mono",monospace}.serif{font-family:"Playfair Display",serif;font-style:italic}.asset{width:100%;height:100%;object-fit:cover}
@@ -610,6 +607,7 @@
     @media(min-width:901px){.super{display:flex;justify-content:center;height:auto;min-height:676px;padding:88px 0}.super-card{width:min(1000px,calc(100vw - 48px));max-width:1000px}.exp{align-items:center;padding-left:0;padding-right:0}.exp-title,.exp-list{width:min(1000px,calc(100vw - 48px));max-width:1000px}.exp-title{max-width:min(1000px,calc(100vw - 48px))}}
     @media(min-width:901px) and (max-width:1048px){.super{--super-scale:calc((100vw - 48px)/1000);min-height:calc(176px + 500px * var(--super-scale))}.super-card{width:1000px;transform:scale(var(--super-scale));transform-origin:top center}}
     @media(max-width:900px){.clock,.available,.learn,.rate,.chips.specimen-card,.reading-widget,.orange,.linkedin,.photo-album{left:auto!important;right:auto!important;top:auto!important;width:min(430px,calc(100vw - 48px));height:auto;min-height:0;transform:none!important}.chips.specimen-card{padding:24px}.chips .chip-list.tags-container{grid-template-columns:1fr 1fr}.reading-widget{padding:24px}.reading-item{grid-template-columns:64px minmax(0,1fr)}.reading-progress{grid-column:2}.photo-album{height:274px}.orange{font-size:22px;line-height:34px}.linkedin{display:flex}.bottom-nav{bottom:24px}.timezone{display:block}}
+    .brand-avatar img[src$="profile-2026.png"]{left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:center 22%}
     :root{--emil-ease-out:cubic-bezier(.23,1,.32,1);--emil-ease:cubic-bezier(.16,1,.3,1);--emil-press:140ms;--emil-hover:180ms}
     .lang-toggle{transition:color var(--emil-hover) var(--emil-ease),background var(--emil-hover) var(--emil-ease),transform var(--emil-hover) var(--emil-ease-out)}
     .music-toggle{transition:background var(--emil-hover) var(--emil-ease),border-color var(--emil-hover) var(--emil-ease),color var(--emil-hover) var(--emil-ease)}
@@ -665,7 +663,7 @@
     </section>
     <section class="section hero light design-handoff" id="home">
       <nav class="top-nav">
-        <div class="brand"><div class="brand-avatar"><img src="assets/profile.png" alt="赵东阳"><span class="online-dot"></span></div><button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">中文 / EN</button><span>ALEX CHEN</span></div>
+        <div class="brand"><div class="brand-avatar"><img src="assets/profile-2026.png" alt="赵东阳"><span class="online-dot"></span></div><button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">中文 / EN</button><span>ALEX CHEN</span></div>
         <div class="nav-center"></div>
         <div class="nav-right">
           <div class="top-music-pill" id="music-toggle">
@@ -801,7 +799,7 @@
         <img class="life-title-deco title-underline" src="assets/life/title-underline.svg" alt="" loading="lazy" decoding="async">
         <img class="life-title-deco title-arrow" src="assets/life/title-arrow.svg" alt="" loading="lazy" decoding="async">
       </h2>
-      <div class="life-card clock"><div class="photo"><img class="asset" src="assets/life/avatar-container.png" alt="" loading="lazy" decoding="async"></div><div class="city">beijing</div><div class="time-large" id="local-time">00:00:00 <span class="ampm" id="time-ampm">上午</span></div><div class="timezone">PST·UTC-8</div></div>
+      <div class="life-card clock"><div class="photo"><img class="asset" src="assets/profile-2026.png" alt="" loading="lazy" decoding="async"></div><div class="city">beijing</div><div class="time-large" id="local-time">00:00:00 <span class="ampm" id="time-ampm">上午</span></div><div class="timezone">PST·UTC-8</div></div>
       <div class="life-card player vinyl-player sleeve-player" id="vinyl-player">
         <div class="sleeve-left">
           <div class="record-wrapper" id="recordContainer">
@@ -1054,7 +1052,7 @@
           <button id="external-preview-close" type="button" aria-label="关闭"><i class="ph ph-x"></i></button>
         </div>
       </div>
-      <iframe id="external-preview-frame" title="Coverflow Player" loading="eager" allow="autoplay"></iframe>
+      <iframe id="external-preview-frame" title="Coverflow Player" loading="lazy" allow="autoplay"></iframe>
     </div>
   </div>
 
@@ -1068,6 +1066,68 @@
   </nav>
 
   <script>
+    const runWhenIdle=(callback,timeout=1600)=>{
+      if("requestIdleCallback" in window)return window.requestIdleCallback(callback,{timeout});
+      return window.setTimeout(()=>callback({didTimeout:true,timeRemaining:()=>0}),Math.min(timeout,900));
+    };
+    const lazyAssets={scripts:new Map(),styles:new Map()};
+    function loadScriptOnce(src){
+      if(lazyAssets.scripts.has(src))return lazyAssets.scripts.get(src);
+      const promise=new Promise((resolve,reject)=>{
+        const existing=document.querySelector(`script[src="${src}"]`);
+        if(existing){
+          if(existing.dataset.loaded==="true")resolve(existing);
+          else{
+            existing.addEventListener("load",()=>resolve(existing),{once:true});
+            existing.addEventListener("error",reject,{once:true});
+          }
+          return;
+        }
+        const script=document.createElement("script");
+        script.src=src;
+        script.async=true;
+        script.dataset.loaded="false";
+        script.onload=()=>{script.dataset.loaded="true";resolve(script)};
+        script.onerror=reject;
+        document.head.appendChild(script);
+      });
+      lazyAssets.scripts.set(src,promise);
+      return promise;
+    }
+    function loadStyleOnce(href){
+      if(lazyAssets.styles.has(href))return lazyAssets.styles.get(href);
+      const promise=new Promise(resolve=>{
+        const existing=document.querySelector(`link[href="${href}"]`);
+        if(existing){resolve(existing);return;}
+        const link=document.createElement("link");
+        link.rel="stylesheet";
+        link.href=href;
+        link.onload=()=>resolve(link);
+        link.onerror=()=>resolve(link);
+        document.head.appendChild(link);
+      });
+      lazyAssets.styles.set(href,promise);
+      return promise;
+    }
+    function runNearElement(target,callback,{rootMargin="900px 0px",once=true}={}){
+      const el=typeof target==="string"?document.querySelector(target):target;
+      if(!el)return;
+      let done=false;
+      const run=()=>{
+        if(done&&once)return;
+        done=true;
+        callback();
+      };
+      if(!("IntersectionObserver" in window)){run();return;}
+      const observer=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(!entry.isIntersecting)return;
+          run();
+          if(once)observer.disconnect();
+        });
+      },{rootMargin,threshold:0});
+      observer.observe(el);
+    }
     function initGlassSurfaces(){
       const supportsSVGFilters=(filterId)=>{
         const isWebkit=/Safari/.test(navigator.userAgent)&&!/Chrome/.test(navigator.userAgent);
@@ -1388,21 +1448,51 @@
       };
       const images=Array.from({length:frameCount},()=>null);
       const framePromises=Array.from({length:frameCount},()=>null);
-      const state={frame:0,drawn:-1,progress:0,width:0,height:0,dpr:1,needsDraw:true};
+      const queuedFrames=new Set();
+      const state={frame:0,drawn:-1,progress:0,width:0,height:0,dpr:1,needsDraw:true,raf:0,active:true};
       const introLogo=new Image();
       introLogo.decoding="async";
       introLogo.src="assets/loading/loading-0.png";
+      const wake=()=>{
+        state.needsDraw=true;
+        if(!state.raf)state.raf=requestAnimationFrame(loop);
+      };
       const loadFrame=index=>{
+        if(index<0||index>=frameCount)return null;
         if(images[index])return images[index];
         const img=new Image();
         img.decoding="async";
+        img.loading="eager";
+        img.fetchPriority=index<12?"high":"low";
         framePromises[index]=new Promise(resolve=>{
-          img.onload=()=>{state.needsDraw=true;resolve(img)};
-          img.onerror=()=>resolve(null);
+          img.addEventListener("load",()=>{wake();resolve(img)},{once:true});
+          img.addEventListener("error",()=>resolve(null),{once:true});
         });
         img.src=framePath(index);
         images[index]=img;
         return img;
+      };
+      const queueFrame=index=>{
+        if(index<0||index>=frameCount||images[index]||queuedFrames.has(index))return;
+        queuedFrames.add(index);
+      };
+      const pumpQueue=(budget=3)=>{
+        let count=0;
+        for(const index of queuedFrames){
+          queuedFrames.delete(index);
+          loadFrame(index);
+          count+=1;
+          if(count>=budget)break;
+        }
+        if(queuedFrames.size)runWhenIdle(()=>pumpQueue(4),900);
+      };
+      const prioritizeAround=(center,radius=12)=>{
+        queueFrame(center);
+        for(let offset=1;offset<=radius;offset+=1){
+          queueFrame(center+offset);
+          if(offset<=8)queueFrame(center-offset);
+        }
+        pumpQueue(center<18?6:3);
       };
       function resizeCanvas(){
         const dpr=Math.min(window.devicePixelRatio||1,2);
@@ -1412,12 +1502,12 @@
           state.width=canvas.width=width;
           state.height=canvas.height=height;
           state.dpr=dpr;
-          state.needsDraw=true;
+          wake();
         }
       }
       function drawFrame(index){
         const img=loadFrame(index);
-        if(!img.complete||!img.naturalWidth)return;
+        if(!img||!img.complete||!img.naturalWidth)return false;
         const cw=canvas.width;
         const ch=canvas.height;
         const baseScale=Math.max(cw/img.naturalWidth,ch/img.naturalHeight);
@@ -1429,7 +1519,7 @@
           ctx.fillRect(0,0,cw,ch);
           ctx.drawImage(introLogo,(cw-size)/2,(ch-size)/2,size,size);
           state.drawn=index;
-          return;
+          return true;
         }
         const scale=baseScale;
         const dw=img.naturalWidth*scale;
@@ -1439,6 +1529,7 @@
         ctx.clearRect(0,0,cw,ch);
         ctx.drawImage(img,dx,dy,dw,dh);
         state.drawn=index;
+        return true;
       }
       function updateProgress(){
         const rect=section.getBoundingClientRect();
@@ -1462,36 +1553,47 @@
           state.frame=frame;
           state.progress=progress;
           section.style.setProperty("--sequence-progress",progress.toFixed(4));
-          state.needsDraw=true;
+          prioritizeAround(frame,Math.max(10,Math.round(frameCount*.06)));
+          wake();
         }
       }
       function loop(){
+        state.raf=0;
         resizeCanvas();
         updateProgress();
+        let drew=false;
         if(state.needsDraw||state.drawn!==state.frame){
-          drawFrame(state.frame);
+          drew=drawFrame(state.frame);
           state.needsDraw=false;
         }
-        requestAnimationFrame(loop);
+        const rect=section.getBoundingClientRect();
+        const near=rect.bottom>-window.innerHeight*.35&&rect.top<window.innerHeight*1.35;
+        state.active=near;
+        if(near&&drew&&state.drawn!==state.frame)state.raf=requestAnimationFrame(loop);
       }
       const first=loadFrame(0);
       const firstReady=new Promise(resolve=>{
         if(first.complete&&first.naturalWidth)resolve(first);
-        first.onload=()=>{state.needsDraw=true;resolve(first)};
-        first.onerror=()=>resolve(null);
+        first.addEventListener("load",()=>{wake();resolve(first)},{once:true});
+        first.addEventListener("error",()=>resolve(null),{once:true});
       });
-      loop();
-      const warmup=[1,2,3,4,5,6,7,8,9,10,16,24,32,40,48,56,64,72,80,88,96,introFrameCount,introFrameCount+1,introFrameCount+2,introFrameCount+10,introFrameCount+20,introFrameCount+40,introFrameCount+60,introFrameCount+80,introFrameCount+100,introFrameCount+119];
-      warmup.forEach(index=>loadFrame(index));
+      wake();
+      const warmup=[1,2,3,4,5,6,7,8,9,10,16,24,32,48,64,80,95,introFrameCount,introFrameCount+1,introFrameCount+6,introFrameCount+16,introFrameCount+32,introFrameCount+56,introFrameCount+84,introFrameCount+119];
+      warmup.forEach(queueFrame);
+      pumpQueue(8);
       const preloadAll=()=>{
-        images.forEach((_,index)=>loadFrame(index));
+        const center=state.frame;
+        const order=Array.from({length:frameCount},(_,index)=>index).sort((a,b)=>Math.abs(a-center)-Math.abs(b-center));
+        order.forEach(queueFrame);
+        pumpQueue(3);
         return Promise.all(framePromises);
       };
-      window.addEventListener("resize",()=>{state.needsDraw=true},{passive:true});
+      window.addEventListener("scroll",wake,{passive:true});
+      window.addEventListener("resize",wake,{passive:true});
       if("requestIdleCallback" in window){
-        requestIdleCallback(()=>preloadAll(),{timeout:1800});
+        requestIdleCallback(()=>preloadAll(),{timeout:3200});
       }else{
-        setTimeout(preloadAll,500);
+        setTimeout(preloadAll,1600);
       }
       return firstReady;
     }
@@ -2180,7 +2282,7 @@
     };
 	    const coverImageCache=new Set();
 	    const portfolioAudio=new Audio();
-	    portfolioAudio.preload="auto";
+	    portfolioAudio.preload="metadata";
 	    let portfolioPlaybackRequested=false;
 	    let portfolioUserPaused=false;
 	    let portfolioPlaybackRequestId=0;
@@ -2268,8 +2370,8 @@
 	      if(isExternalPreviewOpen())return;
 	      void playPortfolioAudio();
 	    };
-    window.setTimeout(tryInitialPortfolioPlayback,120);
-    const initialPlaybackGestureEvents=["pointerdown","keydown","wheel","touchstart"];
+    window.setTimeout(()=>runWhenIdle(tryInitialPortfolioPlayback,1800),5200);
+    const initialPlaybackGestureEvents=["pointerdown","keydown"];
     const removeInitialPlaybackGestureListeners=()=>{
       initialPlaybackGestureEvents.forEach(type=>window.removeEventListener(type,handleInitialPlaybackGesture));
     };
@@ -2589,7 +2691,8 @@
       document.addEventListener("keydown",event=>{if(event.key==="Escape"&&preview.classList.contains("is-open"))hide()});
     }
     initExternalPreview();
-    warmCoverflowWhenIdle();
+    document.getElementById("music-toggle")?.addEventListener("pointerenter",warmCoverflowWhenIdle,{once:true,passive:true});
+    document.getElementById("music-toggle")?.addEventListener("focusin",warmCoverflowWhenIdle,{once:true});
     const stars=document.querySelectorAll("#star-rating-container span");let rating=4;function paint(n){stars.forEach((s,i)=>s.classList.toggle("is-filled",i<n))}paint(rating);stars.forEach((s,i)=>{s.addEventListener("mouseenter",()=>paint(i+1));s.addEventListener("mouseleave",()=>paint(rating));s.addEventListener("click",()=>{rating=i+1;paint(rating);s.animate([{transform:"scale(1.22)"},{transform:"scale(1)"}],{duration:160})})});
     function initVibeCards(){
       const grid=document.querySelector(".vibe-grid");
@@ -2825,7 +2928,11 @@
       Events.on(engine,"afterUpdate",()=>{Composite.allBodies(engine.world).forEach(body=>{const p=body.plugin;if(!p||!p.element)return;p.element.style.transform=`translate(${body.position.x-p.width/2}px, ${body.position.y-p.height/2}px) rotate(${body.angle}rad)`})});
       Runner.run(Runner.create(),engine);
     }
-    initGravity();
+    runNearElement(".super-card",()=>{
+      loadScriptOnce("https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js")
+        .then(()=>initGravity())
+        .catch(()=>{});
+    },{rootMargin:"900px 0px"});
     let favoritePlaces=currentLang==="en"?[
       {id:"beijing-hutong",type:"travel",title:"Beijing / Hutong Walk",coord:[116.4147,39.9471],body:"Start near the art museum in the afternoon, pass through quiet hutongs, and find a small restaurant for dinner. Good for photographing doorplates, tree shadows, and evening window light.",tags:["Photo spot","Coffee","Half-day route"]},
       {id:"shanghai-wukang",type:"food",title:"Shanghai / Plane-tree Dining",coord:[121.4368,31.2119],body:"Walk from the Hengfu area to a small bistro, connecting a corner bakery, coffee, and dinner into an unhurried route.",tags:["Restaurant","Bakery","Night light"]},
@@ -2924,7 +3031,15 @@
         setActivePlace(next,map);
       }));
     }
-    initFavoriteMap();
+    runNearElement("#favorite-map",()=>{
+      Promise.all([
+        loadStyleOnce("https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css"),
+        loadScriptOnce("https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js")
+      ]).then(()=>initFavoriteMap()).catch(()=>{
+        renderPlacePanel(favoritePlaces[0]);
+        if(mapStatus)mapStatus.textContent=t("places.sync.fallback");
+      });
+    },{rootMargin:"1000px 0px"});
   </script>
 </body>
 </html>
